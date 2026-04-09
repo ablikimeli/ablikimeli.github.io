@@ -20,7 +20,6 @@
             text-decoration: none;
             color: #3498db;
         }
-        /* 导航 */
         header {
             background: #1b2b3a;
             color: white;
@@ -53,7 +52,6 @@
         .nav-links a:hover {
             color: #5dade2;
         }
-        /* Banner */
         .banner {
             background: linear-gradient(135deg, #2c6fb8, #3498db);
             color: white;
@@ -69,7 +67,6 @@
             max-width: 800px;
             margin: 0 auto 0.6rem auto;
         }
-        /* 区块 */
         .section {
             padding: 3.5rem 0;
         }
@@ -81,7 +78,6 @@
             padding-left: 12px;
             font-weight: bold;
         }
-        /* 分类卡片 */
         .category-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -101,7 +97,6 @@
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.07);
         }
-        /* 文章卡片 */
         .card-box {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -126,10 +121,6 @@
             color: #555;
             margin-bottom: 1rem;
         }
-        .card a {
-            font-weight: 500;
-        }
-        /* 二维码排版 */
         .qrcode-group {
             display: flex;
             justify-content: center;
@@ -149,12 +140,17 @@
             font-weight: bold;
             color: #2c3e50;
         }
+        footer {
+            background: #1b2b3a;
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            margin-top: 3rem;
+        }
     </style>
 </head>
-
 <body>
 
-<!-- 导航 -->
 <header>
     <div class="container nav">
         <div class="logo">Abel 统计</div>
@@ -167,7 +163,6 @@
     </div>
 </header>
 
-<!-- Banner -->
 <section class="banner" id="home">
     <div class="container">
         <h1>Abel 统计 | 医学统计与生物信息学习平台</h1>
@@ -177,7 +172,6 @@
     </div>
 </section>
 
-<!-- 学习分类 -->
 <div class="container section" id="categories">
     <h2 class="section-title">📚 学习分类（持续更新）</h2>
     <div class="category-grid">
@@ -192,7 +186,6 @@
     </div>
 </div>
 
-<!-- 最新文章 -->
 <div class="container section" id="articles">
     <h2 class="section-title">📝 最新文章（同步公众号）</h2>
     <div class="card-box">
@@ -214,7 +207,6 @@
     </div>
 </div>
 
-<!-- 关于我 + 双二维码 -->
 <div class="container section" id="about">
     <h2 class="section-title">👨‍💻 关于博主</h2>
     <div class="card" style="text-align:center;">
@@ -224,25 +216,22 @@
         
         <p style="margin-top:1.5rem; font-weight:bold; font-size:1.1rem;">👇 关注我，一起学习科研干货</p>
         
-        <!-- 双二维码：公众号 + 小红书 -->
         <div class="qrcode-group">
             <div class="qrcode-item">
-                <img src="https://imgchr.com/i/ped0jns" class="qrcode">
+                <img src="https://img.chr.cc/i/ped0jns.jpg" class="qrcode">
                 <div class="qrcode-text">微信公众号</div>
             </div>
             <div class="qrcode-item">
-                <img src="https://imgchr.com/i/ped0vBn" class="qrcode">
+                <img src="https://img.chr.cc/i/ped0vBn.jpg" class="qrcode">
                 <div class="qrcode-text">小红书</div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- 底部 -->
 <footer>
     <p>© 2025 Abel 统计 | 医学统计与生物信息学习平台</p>
     <p>📱 公众号：Abel统计</p>
-    <p>所有文章同步更新：Abel统计公众号</p>
 </footer>
 
 </body>
