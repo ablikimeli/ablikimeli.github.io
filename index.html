@@ -62,11 +62,6 @@
             font-size: 2.2rem;
             margin-bottom: 1rem;
         }
-        .banner p {
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto 0.6rem auto;
-        }
         .section {
             padding: 3.5rem 0;
         }
@@ -76,7 +71,6 @@
             color: #2c3e50;
             border-left: 5px solid #3498db;
             padding-left: 12px;
-            font-weight: bold;
         }
         .category-grid {
             display: grid;
@@ -89,14 +83,31 @@
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 3px 12px rgba(0,0,0,0.04);
-            font-weight: 500;
-            font-size: 1rem;
+        }
+
+        /* 工具链接卡片样式 */
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .tool-item {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
             transition: 0.2s;
         }
-        .category:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+        .tool-item a {
+            font-weight: bold;
+            color: #2c6fb8;
         }
+        .tool-item:hover {
+            transform: translateY(-3px);
+        }
+
         .card-box {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -107,39 +118,31 @@
             border-radius: 10px;
             padding: 1.8rem;
             box-shadow: 0 3px 12px rgba(0,0,0,0.05);
-            transition: 0.2s;
         }
-        .card:hover {
-            transform: translateY(-4px);
-        }
-        .card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.6rem;
-            color: #2c3e50;
-        }
-        .card p {
-            color: #555;
-            margin-bottom: 1rem;
-        }
+
         .qrcode-group {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            align-items: center;
             margin-top: 1rem;
-            flex-wrap: wrap;
         }
         .qrcode-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
         }
         .qrcode {
             width: 160px;
+            height: 160px;
+            object-fit: cover;
             border-radius: 8px;
         }
         .qrcode-text {
             margin-top: 0.5rem;
             font-weight: bold;
-            color: #2c3e50;
         }
+
         footer {
             background: #1b2b3a;
             color: white;
@@ -157,6 +160,8 @@
         <div class="nav-links">
             <a href="#home">首页</a>
             <a href="#categories">学习分类</a>
+            <a href="#databases">公共数据库</a>
+            <a href="#tools">科研工具</a>
             <a href="#articles">最新文章</a>
             <a href="#about">关于我</a>
         </div>
@@ -168,41 +173,78 @@
         <h1>Abel 统计 | 医学统计与生物信息学习平台</h1>
         <p>专注分享：医学统计学方法 | 样本量计算 | 生物信息学 | 公共数据库挖掘</p>
         <p>机器学习 | 传染病数学建模 | 研究设计 | 真实世界研究</p>
-        <p style="margin-top:1.2rem; font-weight:bold;">📱 公众号：Abel统计（同步更新全部干货）</p>
+        <p style="margin-top:1rem; font-weight:bold;">📱 公众号：Abel统计</p>
     </div>
 </section>
 
 <div class="container section" id="categories">
-    <h2 class="section-title">📚 学习分类（持续更新）</h2>
+    <h2 class="section-title">📚 学习分类</h2>
     <div class="category-grid">
         <div class="category">📊 医学统计学方法</div>
         <div class="category">🧮 样本量计算</div>
-        <div class="category">🧬 生物信息学（转录组 / 单细胞 / 空间转录 / 蛋白组 / 代谢组 / 肠道菌群）</div>
-        <div class="category">💾 公共数据库挖掘（UKB / NHANES / CHARLS / GBD）</div>
+        <div class="category">🧬 生物信息学</div>
+        <div class="category">💾 公共数据库挖掘</div>
         <div class="category">📈 传染病数学建模</div>
-        <div class="category">🤖 机器学习在医学中的应用</div>
-        <div class="category">📝 临床研究设计</div>
-        <div class="category">🏥 真实世界研究（RWS）</div>
+        <div class="category">🤖 机器学习</div>
+        <div class="category">📝 研究设计</div>
+        <div class="category">🏥 真实世界研究</div>
+    </div>
+</div>
+
+<!-- 公共数据库 -->
+<div class="container section" id="databases">
+    <h2 class="section-title">💾 公共数据库大全</h2>
+    <div class="tool-grid">
+        <div class="tool-item"><a href="https://www.ukbiobank.ac.uk/" target="_blank">UKB 英国生物银行</a></div>
+        <div class="tool-item"><a href="https://wwwn.cdc.gov/nchs/nhanes/" target="_blank">NHANES 美国健康营养</a></div>
+        <div class="tool-item"><a href="https://charls.pku.edu.cn/" target="_blank">CHARLS 中国健康养老</a></div>
+        <div class="tool-item"><a href="https://vizhub.healthdata.org/gbd-results/" target="_blank">GBD 全球疾病负担</a></div>
+        <div class="tool-item"><a href="https://www.ncbi.nlm.nih.gov/geo/" target="_blank">GEO 基因表达</a></div>
+        <div class="tool-item"><a href="https://portal.gdc.cancer.gov/" target="_blank">TCGA 肿瘤基因组</a></div>
+        <div class="tool-item"><a href="https://www.ebi.ac.uk/arrayexpress/" target="_blank">ArrayExpress</a></div>
+        <div class="tool-item"><a href="https://www.ncbi.nlm.nih.gov/sra" target="_blank">SRA 测序数据</a></div>
+        <div class="tool-item"><a href="https://www.ebi.ac.uk/ena/" target="_blank">ENA 欧洲核酸库</a></div>
+        <div class="tool-item"><a href="https://string-db.org/" target="_blank">STRING 蛋白互作</a></div>
+        <div class="tool-item"><a href="https://www.genome.jp/kegg/" target="_blank">KEGG 通路数据库</a></div>
+        <div class="tool-item"><a href="https://pubchem.ncbi.nlm.nih.gov/" target="_blank">PubChem 化合物库</a></div>
+    </div>
+</div>
+
+<!-- 科研工具 + 文献工具 -->
+<div class="container section" id="tools">
+    <h2 class="section-title">🔬 科研文献工具大全</h2>
+    <div class="tool-grid">
+        <div class="tool-item"><a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">PubMed 文献</a></div>
+        <div class="tool-item"><a href="https://www.sciencedirect.com/" target="_blank">ScienceDirect</a></div>
+        <div class="tool-item"><a href="https://www.webofscience.com/" target="_blank">Web of Science</a></div>
+        <div class="tool-item"><a href="https://www.cnki.net/" target="_blank">中国知网 CNKI</a></div>
+        <div class="tool-item"><a href="https://www.wanfangdata.com.cn/" target="_blank">万方数据</a></div>
+        <div class="tool-item"><a href="https://www.cqvip.com/" target="_blank">维普资讯</a></div>
+        <div class="tool-item"><a href="https://www.researchgate.net/" target="_blank">ResearchGate</a></div>
+        <div class="tool-item"><a href="https://www.endnote.com/" target="_blank">EndNote 文献管理</a></div>
+        <div class="tool-item"><a href="https://www.zotero.org/" target="_blank">Zotero 文献管理</a></div>
+        <div class="tool-item"><a href="https://www.mendeley.com/" target="_blank">Mendeley</a></div>
+        <div class="tool-item"><a href="https://imagej.nih.gov/ij/" target="_blank">ImageJ 作图</a></div>
+        <div class="tool-item"><a href="https://www.bioinformatics.com/" target="_blank">生信在线工具</a></div>
+        <div class="tool-item"><a href="https://www.graphpad.com/" target="_blank">GraphPad Prism</a></div>
+        <div class="tool-item"><a href="https://www.r-project.org/" target="_blank">R 语言统计</a></div>
+        <div class="tool-item"><a href="https://www.python.org/" target="_blank">Python 编程</a></div>
+        <div class="tool-item"><a href="https://www.overleaf.com/" target="_blank">Overleaf LaTeX</a></div>
     </div>
 </div>
 
 <div class="container section" id="articles">
-    <h2 class="section-title">📝 最新文章（同步公众号）</h2>
+    <h2 class="section-title">📝 最新文章</h2>
     <div class="card-box">
         <div class="card">
-            <h3>样本量计算最全方法总结</h3>
-            <p>均值、率、生存分析、诊断试验、等效性研究…一次性讲透！</p>
-            <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0NDcyMzk1Mw==&action=getalbum&album_id=3709856140965101571" target="_blank">阅读全文 →</a>
+            <h3>样本量计算方法总结</h3>
+            <p>均值、率、生存分析、诊断试验…</p>
+            <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0NDcyMzk1Mw==&action=getalbum&album_id=3709856140965101571" target="_blank">阅读全文</a>
         </div>
         <div class="card">
-            <h3>NHANES 数据库挖掘实战教程</h3>
-            <p>数据下载、清洗、统计分析、图表绘制全套流程</p>
-            <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0NDcyMzk1Mw==&action=getalbum&album_id=3709856140965101571" target="_blank">阅读全文 →</a>
-        </div>
-        <div class="card">
-            <h3>单细胞测序分析入门到精通</h3>
-            <p>质控、降维、聚类、差异基因、细胞注释…一步一步教学</p>
-            <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0NDcyMzk1Mw==&action=getalbum&album_id=3709856140965101571" target="_blank">阅读全文 →</a>
+            <h3>NHANES 数据库挖掘实战</h3>
+            <p>数据下载、清洗、分析全套流程</p>
+            <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0NDcyMzk1Mw==&action=getalbum&album_id=3709856140965101571" target="_blank">阅读全文</a>
         </div>
     </div>
 </div>
@@ -211,27 +253,22 @@
     <h2 class="section-title">👨‍💻 关于博主</h2>
     <div class="card" style="text-align:center;">
         <p>大家好，我是 Abel，《Abel统计》公众号主理人。</p>
-        <p>专注医学统计学、生物信息学、公共数据库挖掘、机器学习、真实世界研究、传染病数学建模、临床研究设计等领域的干货分享。</p>
-        <p>本网站为公众号同步平台，所有内容持续更新，欢迎收藏转发！</p>
-        
-        <p style="margin-top:1.5rem; font-weight:bold; font-size:1.1rem;">👇 关注我，一起学习科研干货</p>
+        <p>专注医学统计、生物信息学、数据库挖掘、机器学习、科研设计分享。</p>
+
+        <p style="margin-top:1.5rem; font-weight:bold;">👇 关注我</p>
         
         <div class="qrcode-group">
             <div class="qrcode-item">
-                <img src="https://img.chr.cc/i/ped0jns.jpg" class="qrcode">
-                <div class="qrcode-text">微信公众号</div>
-            </div>
-            <div class="qrcode-item">
-                <img src="https://img.chr.cc/i/ped0vBn.jpg" class="qrcode">
-                <div class="qrcode-text">小红书</div>
+                <img src="https://s41.ax1x.com/2026/04/10/ped0jns.jpg" class="qrcode">
+                <div class="qrcode-text">公众号：Abel统计</div>
             </div>
         </div>
     </div>
 </div>
 
 <footer>
-    <p>© 2025 Abel 统计 | 医学统计与生物信息学习平台</p>
-    <p>📱 公众号：Abel统计</p>
+    <p>© 2025 Abel 统计</p>
+    <p>公众号：Abel统计</p>
 </footer>
 
 </body>
