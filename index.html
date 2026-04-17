@@ -2,211 +2,186 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>医学统计与生物信息学习平台 | Abel统计</title>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--pri:#0d9488;--pri-d:#0f766e;--pri-l:#14b8a6;--pri-bg:#f0fdfa;--acc:#06b6d4;--glow:rgba(6,182,212,.25);--bg:#f4f7fb;--card:#fff;--text:#0f172a;--text2:#334155;--text3:#64748b;--border:#e2e8f0;--r:10px;--rs:8px;--code-bg:#0c1222}
-[data-theme="dark"]{--bg:#060b18;--card:#0f1729;--text:#e2e8f0;--text2:#94a3b8;--text3:#475569;--border:#1e293b;--pri-bg:#042f2e}
+:root{--bg:#f0f4f8;--card:#fff;--tx:#0f172a;--tx2:#334155;--tx3:#64748b;--bd:#e2e8f0;--pri:#0d9488;--pri2:#0f766e;--pri3:#14b8a6;--pri-bg:rgba(13,148,136,.06);--acc:#06b6d4;--glow:rgba(6,182,212,.2);--code:#0c1222;--r:10px}
+[data-theme=dark]{--bg:#060b18;--card:#0f1729;--tx:#e2e8f0;--tx2:#94a3b8;--tx3:#475569;--bd:#1e293b;--pri-bg:rgba(13,148,136,.1)}
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:68px}
-body{background:var(--bg);color:var(--text);line-height:1.8;font-family:"PingFang SC","Microsoft YaHei",sans-serif;transition:background .3s,color .3s}
-body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(ellipse at 20% 0%,rgba(13,148,136,.04),transparent 55%),radial-gradient(ellipse at 80% 90%,rgba(6,182,212,.03),transparent 50%)}
-a{text-decoration:none;color:var(--pri);transition:color .2s}a:hover{color:var(--acc)}
-ul,ol{padding-left:1.3rem}
-.top-bar{background:linear-gradient(90deg,var(--pri-d),var(--pri));padding:.6rem 1rem;text-align:center}
-.top-bar a{color:#fff;font-size:.88rem;font-weight:600;display:flex;align-items:center;justify-content:center;gap:.5rem}
-header{background:linear-gradient(135deg,#0a0f1e,#111d35);padding:.8rem 1.5rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.3);border-bottom:1px solid rgba(6,182,212,.1)}
-.hdr{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:.8rem}
-.logo{font-size:1.3rem;font-weight:700;color:#fff;white-space:nowrap}
-.logo span{color:var(--acc)}
-.nav{display:flex;flex-wrap:wrap;gap:.3rem}
-.nav a{color:rgba(255,255,255,.7);font-size:.85rem;padding:.3rem .65rem;border-radius:6px;transition:all .2s}
-.nav a:hover{color:#fff;background:rgba(6,182,212,.12)}
-.hdr-r{display:flex;gap:.5rem}
-.ibtn{background:none;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.7);cursor:pointer;padding:.4rem;border-radius:7px;transition:all .2s;display:flex;align-items:center;justify-content:center}
-.ibtn:hover{color:#fff;border-color:rgba(6,182,212,.3);background:rgba(6,182,212,.1)}
-.banner{position:relative;background:linear-gradient(135deg,#0a0f1e 0%,#0d3b35 35%,#0d9488 65%,#06b6d4 100%);color:#fff;padding:4.5rem 2rem 3.5rem;text-align:center;overflow:hidden}
-.banner::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(6,182,212,.05) 1px,transparent 1px);background-size:36px 36px;opacity:.6}
-.banner::after{content:'';position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(6,182,212,.4),transparent);animation:scan 4s linear infinite}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{background:var(--bg);color:var(--tx);font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;line-height:1.7;transition:background .3s,color .3s}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 15% 0%,rgba(13,148,136,.04),transparent 50%),radial-gradient(ellipse at 85% 100%,rgba(6,182,212,.03),transparent 50%);z-index:0}
+a{color:var(--pri);text-decoration:none;transition:color .2s}a:hover{color:var(--acc)}
+.topbar{background:linear-gradient(90deg,var(--pri2),var(--pri));padding:.55rem 1rem;text-align:center}
+.topbar a{color:#fff;font-size:.85rem;font-weight:600}
+header{background:linear-gradient(135deg,#080d1c,#0f1a32);padding:.7rem 1.2rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.3);border-bottom:1px solid rgba(6,182,212,.08)}
+.hdr{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:.6rem}
+.logo{font-size:1.2rem;font-weight:700;color:#fff;white-space:nowrap}.logo b{color:var(--acc)}
+nav{display:flex;gap:.25rem;flex-wrap:wrap}
+nav a{color:rgba(255,255,255,.65);font-size:.82rem;padding:.3rem .6rem;border-radius:6px;transition:all .2s}nav a:hover{color:#fff;background:rgba(6,182,212,.1)}
+.hbtn{background:none;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.6);cursor:pointer;padding:.4rem;border-radius:7px;transition:all .2s;display:flex;align-items:center}
+.hbtn:hover{color:#fff;border-color:rgba(6,182,212,.3);background:rgba(6,182,212,.08)}
+.banner{position:relative;background:linear-gradient(135deg,#080d1c 0%,#0a2e2a 40%,#0d9488 70%,#06b6d4 100%);color:#fff;padding:4rem 1.5rem 3rem;text-align:center;overflow:hidden}
+.banner::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(6,182,212,.06) 1px,transparent 1px);background-size:32px 32px}
+.banner::after{content:'';position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(6,182,212,.5),transparent);animation:scan 3.5s linear infinite}
 @keyframes scan{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
-.bc{position:relative;z-index:2;max-width:780px;margin:0 auto}
-.banner h1{font-size:2.2rem;font-weight:800;margin-bottom:1rem;text-shadow:0 0 30px rgba(6,182,212,.25)}
-.banner p{font-size:1rem;opacity:.88;margin:.3rem 0}
-.wrap{max-width:1200px;margin:0 auto;padding:0 1.2rem;position:relative;z-index:1}
-.sec{padding:2.2rem 0}
-.stitle{font-size:1.45rem;font-weight:700;margin-bottom:1.3rem;color:var(--text);border-left:4px solid var(--pri);padding-left:12px}
-.mhdr{background:var(--card);padding:1rem 1.3rem;border-radius:var(--r);box-shadow:0 2px 10px rgba(0,0,0,.04);cursor:pointer;display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem;transition:all .2s;border:1px solid var(--border)}
-.mhdr:hover{border-color:rgba(6,182,212,.25);box-shadow:0 0 15px rgba(6,182,212,.06)}
-.mtitle{font-size:1.08rem;font-weight:700;display:flex;align-items:center;gap:.5rem;color:var(--text)}
-.ticon{font-size:.8rem;color:var(--text3);transition:transform .3s}.ticon.on{transform:rotate(180deg)}
-.mcont{background:var(--card);border-radius:0 0 var(--r) var(--r);box-shadow:0 2px 10px rgba(0,0,0,.04);margin-bottom:1rem;border:1px solid var(--border);border-top:none;padding:1.5rem;display:none}
-.mcont.on{display:block}
-.tlink{background:var(--pri-bg);padding:.6rem 1rem;border-radius:var(--rs);margin-bottom:1rem;text-align:center;border:1px solid rgba(13,148,136,.12)}
-.tlink a{font-weight:700;color:var(--pri)}
-.subt{font-weight:700;color:var(--text);margin:1.4rem 0 .8rem;font-size:1.02rem;border-bottom:2px solid var(--pri-bg);padding-bottom:.4rem}
-.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:.8rem}
-.titem{background:var(--bg);padding:.8rem;border-radius:var(--rs);text-align:center;transition:all .2s;border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;gap:.2rem}
-.titem a{font-weight:700;color:var(--pri);font-size:.9rem}
-.titem p{font-size:.78rem;color:var(--text3);line-height:1.4}
-.titem:hover{transform:translateY(-2px);background:var(--pri-bg);border-color:rgba(6,182,212,.3);box-shadow:0 0 10px var(--glow)}
-.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1.2rem}
-.card{background:var(--card);border-radius:var(--r);padding:1.3rem;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,.03);transition:all .3s;position:relative}
-.card::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--pri-l);opacity:0;transition:opacity .3s;border-radius:var(--r) 0 0 var(--r)}
-.card:hover{transform:translateY(-2px);box-shadow:0 4px 20px rgba(13,148,136,.08)}
-.card:hover::after{opacity:1}
-.card h3{color:var(--text);margin-bottom:.6rem;font-size:1.05rem;font-weight:700}
-.desc{color:var(--text2);font-size:.9rem;line-height:1.7}
-.desc strong{color:var(--text)}
-.desc ul{margin-top:.3rem;font-size:.85rem}.desc li{margin-bottom:.15rem}
-.mbtn{background:var(--pri);color:#fff;border:none;padding:.45rem .9rem;border-radius:6px;cursor:pointer;font-size:.82rem;margin-top:.5rem;transition:all .2s;font-weight:500}
-.mbtn:hover{background:var(--pri-d);box-shadow:0 0 12px var(--glow)}
-.mexp{display:none;margin-top:.8rem;padding:.9rem;background:var(--bg);border-radius:var(--rs);border:1px solid var(--border)}
-.mexp.on{display:block}
-.tbtn{background:linear-gradient(135deg,var(--pri),var(--pri-d));color:#fff;border:none;padding:.65rem 1.3rem;border-radius:var(--rs);cursor:pointer;font-size:.92rem;margin:.8rem 0;transition:all .25s;font-weight:600}
-.tbtn:hover{transform:translateY(-2px);box-shadow:0 4px 18px var(--glow)}
-.texp{display:none;margin-top:.8rem;padding-top:.8rem;border-top:1px dashed var(--border)}
-.texp.on{display:block}
-.tabs{display:flex;gap:.2rem;margin-bottom:.7rem;border-bottom:1px solid var(--border);padding-bottom:0}
-.tab{background:none;border:none;padding:.4rem .8rem;cursor:pointer;font-size:.83rem;border-bottom:2px solid transparent;color:var(--text3);transition:all .2s;font-weight:500}
-.tab:hover{color:var(--text)}
-.tab.on{border-bottom-color:var(--acc);color:var(--acc);font-weight:700}
-.tpane{display:none}.tpane.on{display:block}
-.cblk{background:var(--code-bg);border-radius:var(--rs);overflow:hidden;margin:.7rem 0;border:1px solid rgba(255,255,255,.06)}
-.chdr{display:flex;justify-content:space-between;align-items:center;padding:.4rem .7rem;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.06)}
-.clang{font-size:.72rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px;font-family:"JetBrains Mono",monospace}
-.cpbtn{background:rgba(255,255,255,.08);color:rgba(255,255,255,.65);border:none;padding:.25rem .6rem;border-radius:4px;cursor:pointer;font-size:.72rem;transition:all .2s;font-family:inherit}
-.cpbtn:hover{background:rgba(6,182,212,.25);color:#fff}
-.cpbtn.ok{background:#059669;color:#fff}
-.cbody{padding:.9rem 1rem;overflow-x:auto;font-family:"JetBrains Mono",Consolas,monospace;font-size:.8rem;line-height:1.6;color:#e2e8f0;white-space:pre;counter-reset:ln}
-.cbody .cl{display:block;min-height:1.6em}
-.cbody .cl::before{counter-increment:ln;content:counter(ln);display:inline-block;width:2.5em;text-align:right;margin-right:1em;color:rgba(255,255,255,.15);font-size:.72em;user-select:none}
-.hk{color:#c084fc;font-weight:500}.hs{color:#6ee7b7}.hc{color:#64748b;font-style:italic}.hn{color:#fca5a5}.hf{color:#67e8f9}
-.mcard{border:1px solid var(--border);border-radius:var(--rs);padding:1rem;margin:.8rem 0;background:var(--card)}
-.mcard h4{color:var(--pri);margin-bottom:.4rem;font-size:.95rem}
-.param{background:var(--bg);padding:.6rem .9rem;border-radius:var(--rs);margin:.4rem 0;font-size:.88rem;color:var(--text2);border:1px solid var(--border)}
-.note{background:#fef3c7;padding:.8rem 1rem;border-left:4px solid #f59e0b;margin:.8rem 0;border-radius:0 var(--rs) var(--rs) 0;font-size:.88rem}
-[data-theme="dark"] .note{background:#1c1917}
-.formula{text-align:center;font-size:1rem;margin:.6rem 0;color:var(--pri);font-weight:700;font-family:"JetBrains Mono",monospace}
-.dtbl{width:100%;border-collapse:collapse;margin:.8rem 0;font-size:.85rem}
-.dtbl th,.dtbl td{border:1px solid var(--border);padding:.5rem .7rem;text-align:center}
-.dtbl th{background:var(--pri);color:#fff;font-weight:600}
-.dtbl tr:nth-child(even){background:var(--bg)}
-code{background:var(--bg);padding:2px 5px;border-radius:4px;color:var(--acc);font-family:"JetBrains Mono",monospace;font-size:.84em}
-.dtq{font-weight:600;color:var(--text);margin-bottom:.6rem;font-size:.92rem}
-.dtOpts{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.5rem}
-.dtOpt{background:var(--bg);border:1px solid var(--border);padding:.45rem .9rem;border-radius:var(--rs);cursor:pointer;font-size:.85rem;transition:all .2s;color:var(--text2);font-weight:500}
-.dtOpt:hover{border-color:var(--pri);color:var(--pri);background:var(--pri-bg);transform:translateY(-1px);box-shadow:0 0 8px var(--glow)}
-.dtRes{padding:1rem;background:var(--pri-bg);border:1px solid rgba(13,148,136,.2);border-radius:var(--rs);display:none}
-.dtRes.on{display:block;animation:fi .25s ease}
-.dtRes strong{color:var(--pri);font-size:1rem}
-.dtRes p{margin:.3rem 0;color:var(--text2);font-size:.85rem}
-.dtGo{display:inline-block;margin-top:.5rem;background:var(--pri);color:#fff;padding:.35rem .8rem;border-radius:6px;font-size:.82rem;font-weight:600;cursor:pointer;border:none;transition:all .2s}
-.dtGo:hover{background:var(--pri-d);transform:translateY(-1px)}
-.dtBack{background:none;border:1px solid var(--border);padding:.35rem .7rem;border-radius:6px;cursor:pointer;font-size:.8rem;color:var(--text3);transition:all .2s;margin-right:.4rem}
-.dtBack:hover{border-color:var(--text3);color:var(--text)}
-@keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-.sov{position:fixed;inset:0;z-index:200;background:rgba(6,11,24,.8);backdrop-filter:blur(10px);display:none;align-items:flex-start;justify-content:center;padding-top:10vh}
-.sov.on{display:flex;animation:fi .15s ease}
-.sbox{background:var(--card);border-radius:var(--r);width:90%;max-width:600px;box-shadow:0 8px 40px rgba(0,0,0,.4);overflow:hidden;max-height:65vh;display:flex;flex-direction:column;border:1px solid rgba(6,182,212,.1)}
-.sinp{display:flex;align-items:center;padding:.8rem 1rem;border-bottom:1px solid var(--border);gap:.6rem}
-.sinp input{flex:1;border:none;outline:none;background:none;font-size:1rem;color:var(--text);font-family:inherit}
-.sinp input::placeholder{color:var(--text3)}
-.sres{overflow-y:auto;flex:1;padding:.4rem}
-.si{padding:.6rem .8rem;border-radius:var(--rs);cursor:pointer;transition:background .15s}
-.si:hover{background:var(--pri-bg)}
-.si-t{font-weight:600;color:var(--text);font-size:.88rem}
-.si-d{font-size:.78rem;color:var(--text3);margin-top:.1rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.se{padding:1.5rem;text-align:center;color:var(--text3);font-size:.88rem}
-.btt{position:fixed;bottom:1.5rem;right:1.5rem;width:40px;height:40px;background:var(--pri);color:#fff;border:none;border-radius:50%;cursor:pointer;box-shadow:0 0 16px var(--glow);z-index:90;opacity:0;transform:translateY(8px);transition:all .3s;display:flex;align-items:center;justify-content:center}
-.btt.vis{opacity:1;transform:translateY(0)}
-.btt:hover{background:var(--pri-d);transform:translateY(-2px)}
-.ainfo{background:linear-gradient(135deg,var(--pri-bg),var(--bg));padding:1.5rem;border-radius:var(--r);text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(0,0,0,.03);border:1px solid rgba(13,148,136,.1)}
-.ainfo h3{color:var(--pri);margin-bottom:.5rem;font-size:1.1rem}
-.ainfo p{margin:.25rem 0;font-size:.88rem;color:var(--text2)}
-footer{background:#060b18;color:rgba(255,255,255,.45);text-align:center;padding:2rem 1rem;margin-top:2.5rem}
-footer p{font-size:.85rem}
-@media(max-width:768px){.banner h1{font-size:1.5rem}.banner{padding:3rem 1.2rem 2.5rem}.nav{display:none}.cgrid{grid-template-columns:1fr}.tgrid{grid-template-columns:repeat(auto-fill,minmax(145px,1fr))}.dtOpts{flex-direction:column}.logo{font-size:1.1rem}}
+.bc{position:relative;z-index:2;max-width:750px;margin:0 auto}
+.banner h1{font-size:2rem;font-weight:800;margin-bottom:.8rem;text-shadow:0 0 40px rgba(6,182,212,.2)}
+.banner p{font-size:.92rem;opacity:.85;margin:.2rem 0}
+.W{max-width:1200px;margin:0 auto;padding:0 1rem;position:relative;z-index:1}
+.sec{padding:2rem 0}
+.st{font-size:1.35rem;font-weight:700;margin-bottom:1.2rem;border-left:4px solid var(--pri);padding-left:10px}
+.mh{background:var(--card);padding:.9rem 1.2rem;border-radius:var(--r);cursor:pointer;display:flex;justify-content:space-between;align-items:center;margin-bottom:.3rem;transition:all .2s;border:1px solid var(--bd);box-shadow:0 1px 6px rgba(0,0,0,.03)}
+.mh:hover{border-color:rgba(6,182,212,.2);box-shadow:0 0 12px var(--glow)}
+.mt{font-size:1rem;font-weight:700;display:flex;align-items:center;gap:.4rem}
+.ti{font-size:.75rem;color:var(--tx3);transition:transform .3s}.ti.on{transform:rotate(180deg)}
+.mc{background:var(--card);border-radius:0 0 var(--r) var(--r);box-shadow:0 1px 6px rgba(0,0,0,.03);margin-bottom:1rem;border:1px solid var(--bd);border-top:none;padding:1.3rem}
+.tl{background:var(--pri-bg);padding:.5rem .8rem;border-radius:8px;margin-bottom:.8rem;text-align:center;border:1px solid rgba(13,148,136,.1)}.tl a{font-weight:700}
+.su{font-weight:700;margin:1.2rem 0 .6rem;font-size:.95rem;border-bottom:2px solid var(--pri-bg);padding-bottom:.3rem}
+.tg{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.7rem}
+.ti2{background:var(--bg);padding:.7rem;border-radius:8px;text-align:center;transition:all .2s;border:1px solid var(--bd)}
+.ti2 a{font-weight:700;font-size:.85rem;display:block}.ti2 p{font-size:.75rem;color:var(--tx3);margin-top:.15rem}
+.ti2:hover{transform:translateY(-2px);background:var(--pri-bg);border-color:rgba(6,182,212,.25);box-shadow:0 0 8px var(--glow)}
+.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1rem}
+.cd{background:var(--card);border-radius:var(--r);padding:1.2rem;border:1px solid var(--bd);box-shadow:0 1px 6px rgba(0,0,0,.02);transition:all .25s;position:relative}
+.cd::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--pri3);opacity:0;transition:opacity .25s;border-radius:var(--r) 0 0 var(--r)}
+.cd:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(13,148,136,.06)}.cd:hover::before{opacity:1}
+.cd h3{font-size:1rem;margin-bottom:.5rem}
+.ds{color:var(--tx2);font-size:.88rem;line-height:1.65}.ds strong{color:var(--tx)}
+.ds ul{padding-left:1.1rem;margin-top:.3rem;font-size:.83rem}.ds li{margin-bottom:.1rem}
+.mb{background:var(--pri);color:#fff;border:none;padding:.4rem .8rem;border-radius:6px;cursor:pointer;font-size:.8rem;margin-top:.4rem;transition:all .2s;font-weight:500}
+.mb:hover{background:var(--pri2);box-shadow:0 0 10px var(--glow)}
+.mx{margin-top:.7rem;padding:.8rem;background:var(--bg);border-radius:8px;border:1px solid var(--bd)}
+.tb{background:linear-gradient(135deg,var(--pri),var(--pri2));color:#fff;border:none;padding:.55rem 1.1rem;border-radius:8px;cursor:pointer;font-size:.88rem;margin:.6rem 0;transition:all .2s;font-weight:600}
+.tb:hover{transform:translateY(-2px);box-shadow:0 4px 16px var(--glow)}
+.tx{margin-top:.7rem;padding-top:.7rem;border-top:1px dashed var(--bd)}
+.tabs{display:flex;gap:.15rem;margin-bottom:.5rem;border-bottom:1px solid var(--bd)}
+.tab{background:none;border:none;padding:.35rem .7rem;cursor:pointer;font-size:.8rem;border-bottom:2px solid transparent;color:var(--tx3);transition:all .15s;font-weight:500}
+.tab:hover{color:var(--tx)}.tab.on{border-bottom-color:var(--acc);color:var(--acc);font-weight:700}
+.tp{display:none}.tp.on{display:block}
+.cb{background:var(--code);border-radius:8px;overflow:hidden;margin:.5rem 0;border:1px solid rgba(255,255,255,.05)}
+.ch{display:flex;justify-content:space-between;align-items:center;padding:.3rem .6rem;background:rgba(255,255,255,.03);border-bottom:1px solid rgba(255,255,255,.05)}
+.cl2{font-size:.68rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.5px;font-family:monospace}
+.cp{background:rgba(255,255,255,.07);color:rgba(255,255,255,.6);border:none;padding:.2rem .5rem;border-radius:4px;cursor:pointer;font-size:.7rem;transition:all .2s;font-family:inherit}
+.cp:hover{background:rgba(6,182,212,.2);color:#fff}.cp.ok{background:#059669;color:#fff}
+.cy{padding:.7rem .8rem;overflow-x:auto;font-family:Consolas,"Courier New",monospace;font-size:.78rem;line-height:1.55;color:#e2e8f0;white-space:pre;counter-reset:ln}
+.cy .ln{display:block;min-height:1.55em}.cy .ln::before{counter-increment:ln;content:counter(ln);display:inline-block;width:2.2em;text-align:right;margin-right:.8em;color:rgba(255,255,255,.12);font-size:.7em;user-select:none}
+.hk{color:#c084fc}.hs{color:#6ee7b7}.hc{color:#64748b;font-style:italic}.hn{color:#fca5a5}.hf{color:#67e8f9}
+.pm{border:1px solid var(--bd);border-radius:8px;padding:.8rem;margin:.6rem 0;background:var(--card)}
+.pm h4{color:var(--pri);margin-bottom:.3rem;font-size:.9rem}
+.par{background:var(--bg);padding:.5rem .8rem;border-radius:8px;margin:.3rem 0;font-size:.85rem;color:var(--tx2);border:1px solid var(--bd)}
+.note{background:#fef3c7;padding:.6rem .8rem;border-left:4px solid #f59e0b;margin:.6rem 0;border-radius:0 8px 8px 0;font-size:.85rem}
+[data-theme=dark] .note{background:#1c1917}
+.fm{text-align:center;font-size:.95rem;margin:.5rem 0;color:var(--pri);font-weight:700;font-family:monospace}
+.dtb{width:100%;border-collapse:collapse;margin:.6rem 0;font-size:.82rem}
+.dtb th,.dtb td{border:1px solid var(--bd);padding:.4rem .6rem;text-align:center}
+.dtb th{background:var(--pri);color:#fff;font-weight:600}
+.dtb tr:nth-child(even){background:var(--bg)}
+code{background:var(--bg);padding:1px 4px;border-radius:3px;color:var(--acc);font-family:monospace;font-size:.82em}
+.dtq{font-weight:600;margin-bottom:.5rem;font-size:.9rem}
+.dtO{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem}
+.dtB{background:var(--bg);border:1px solid var(--bd);padding:.4rem .8rem;border-radius:8px;cursor:pointer;font-size:.82rem;transition:all .2s;color:var(--tx2);font-weight:500}
+.dtB:hover{border-color:var(--pri);color:var(--pri);background:var(--pri-bg);transform:translateY(-1px);box-shadow:0 0 8px var(--glow)}
+.dtR{padding:.8rem;background:var(--pri-bg);border:1px solid rgba(13,148,136,.15);border-radius:8px}
+.dtR strong{color:var(--pri);font-size:.95rem}
+.dtR p{margin:.2rem 0;color:var(--tx2);font-size:.82rem}
+.dtG{display:inline-block;margin-top:.4rem;background:var(--pri);color:#fff;padding:.3rem .7rem;border-radius:6px;font-size:.8rem;font-weight:600;cursor:pointer;border:none;transition:all .2s}
+.dtG:hover{background:var(--pri2)}
+.dtBk{background:none;border:1px solid var(--bd);padding:.3rem .6rem;border-radius:6px;cursor:pointer;font-size:.78rem;color:var(--tx3);transition:all .2s;margin-right:.3rem}
+.dtBk:hover{border-color:var(--tx3);color:var(--tx)}
+@keyframes fi{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+.ov{position:fixed;inset:0;z-index:200;background:rgba(6,11,24,.8);backdrop-filter:blur(8px);display:none;align-items:flex-start;justify-content:center;padding-top:10vh}
+.ov.on{display:flex}
+.ob{background:var(--card);border-radius:var(--r);width:90%;max-width:580px;box-shadow:0 8px 40px rgba(0,0,0,.4);overflow:hidden;max-height:60vh;display:flex;flex-direction:column;border:1px solid rgba(6,182,212,.08)}
+.oi{display:flex;align-items:center;padding:.7rem .8rem;border-bottom:1px solid var(--bd);gap:.5rem}
+.oi input{flex:1;border:none;outline:none;background:none;font-size:.92rem;color:var(--tx);font-family:inherit}
+.oi input::placeholder{color:var(--tx3)}
+.or{overflow-y:auto;flex:1;padding:.3rem}
+.os{padding:.5rem .7rem;border-radius:8px;cursor:pointer;transition:background .12s}
+.os:hover{background:var(--pri-bg)}
+.os-t{font-weight:600;font-size:.85rem}.os-d{font-size:.75rem;color:var(--tx3);margin-top:.1rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.oe{padding:1.2rem;text-align:center;color:var(--tx3);font-size:.85rem}
+.bt{position:fixed;bottom:1.2rem;right:1.2rem;width:38px;height:38px;background:var(--pri);color:#fff;border:none;border-radius:50%;cursor:pointer;box-shadow:0 0 14px var(--glow);z-index:90;opacity:0;transform:translateY(6px);transition:all .3s;display:flex;align-items:center;justify-content:center}
+.bt.vis{opacity:1;transform:translateY(0)}.bt:hover{background:var(--pri2);transform:translateY(-2px)}
+.ai{background:linear-gradient(135deg,var(--pri-bg),var(--bg));padding:1.2rem;border-radius:var(--r);text-align:center;margin:1.5rem 0;border:1px solid rgba(13,148,136,.08)}
+.ai h3{color:var(--pri);margin-bottom:.4rem;font-size:1rem}.ai p{margin:.2rem 0;font-size:.85rem;color:var(--tx2)}
+footer{background:#060b18;color:rgba(255,255,255,.4);text-align:center;padding:1.8rem 1rem;margin-top:2rem}footer p{font-size:.82rem}
+@media(max-width:768px){.banner h1{font-size:1.4rem}.banner{padding:2.5rem 1rem 2rem}nav{display:none}.cg{grid-template-columns:1fr}.tg{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}.dtO{flex-direction:column}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}html{scroll-beh:auto}}
-:focus-visible{outline:2px solid var(--pri);outline-offset:2px;border-radius:4px}
+:focus-visible{outline:2px solid var(--pri);outline-offset:2px}
 </style>
 </head>
 <body>
 
-<div class="top-bar"><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0NDcyMzk1Mw==&action=getalbum&album_id=3709856140965101571&scene=126&sessionid=1775834953391#wechat_redirect" target="_blank" rel="noopener">📢 Abel统计公众号推文 | 点击直达最新科研教程</a></div>
+<div class="topbar"><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0NDcyMzk1Mw==&action=getalbum&album_id=3709856140965101571&scene=126&sessionid=1775834953391#wechat_redirect" target="_blank" rel="noopener">📢 Abel统计公众号 | 点击直达最新科研教程</a></div>
 
 <header><div class="hdr">
-<div class="logo">医学统计<span>学习平台</span></div>
-<nav class="nav"><a href="#home">首页</a><a href="#stats">统计方法</a><a href="#bioinfo">生物信息学</a><a href="#databases">医学数据库</a><a href="#tools">科研工具</a><a href="#ai">AI工具</a><a href="#modeling">传染病建模</a></nav>
-<div class="hdr-r">
-<button class="ibtn" onclick="openS()" aria-label="搜索" title="Ctrl+K"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
-<button class="ibtn" onclick="togTheme()" aria-label="主题"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="thIco"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+<div class="logo">医学统计<b>学习平台</b></div>
+<nav><a href="#home">首页</a><a href="#stats">统计方法</a><a href="#bioinfo">生物信息</a><a href="#databases">数据库</a><a href="#tools">科研工具</a><a href="#ai">AI工具</a><a href="#modeling">传染病建模</a></nav>
+<div style="display:flex;gap:.4rem">
+<button class="hbtn" onclick="openS()" aria-label="搜索" title="Ctrl+K"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+<button class="hbtn" onclick="togTh()" aria-label="主题" id="thB"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="thI"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
 </div></div></header>
 
 <section class="banner" id="home"><div class="bc">
 <h1>医学科研一站式学习平台</h1>
-<p>专注分享：医学统计学 · 样本量计算 · 生物信息学 · 公共数据库挖掘</p>
+<p>医学统计学 · 样本量计算 · 生物信息学 · 公共数据库挖掘</p>
 <p>机器学习 · 传染病数学建模 · 临床研究设计 · 真实世界研究</p>
-<p>因果推断 · 诊断试验 · 量表信效度 · 科研作图 · 论文写作</p>
 </div></section>
 
-<div class="sov" id="sov" onclick="if(event.target===this)closeS()">
-<div class="sbox"><div class="sinp">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text3)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-<input id="sinp" type="text" placeholder="搜索统计方法、数据库、工具..." autocomplete="off">
-</div><div class="sres" id="sres"><div class="se">输入关键词开始搜索</div></div></div>
-</div>
+<div class="ov" id="sov" onclick="if(event.target===this)closeS()"><div class="ob"><div class="oi">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--tx3)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+<input id="si" type="text" placeholder="搜索统计方法、数据库、工具..." autocomplete="off">
+</div><div class="or" id="sr"><div class="oe">输入关键词开始搜索</div></div></div></div>
 
-<div class="wrap">
+<div class="W">
 
 <!-- 决策树 -->
-<div class="sec" id="dtsec">
-<h2 class="stitle">🌿 统计方法选择决策树</h2>
-<div style="background:var(--card);border-radius:var(--r);padding:1.5rem;border:1px solid var(--border);box-shadow:0 0 25px rgba(6,182,212,.05)">
-<div style="font-size:1.05rem;font-weight:700;margin-bottom:.8rem;color:var(--text)">不知道用什么统计方法？回答几个问题帮你选</div>
-<div id="dtC"></div>
-</div>
-</div>
+<div class="sec" id="dtsec"><h2 class="st">🌿 统计方法选择决策树</h2>
+<div style="background:var(--card);border-radius:var(--r);padding:1.2rem;border:1px solid var(--bd);box-shadow:0 0 20px rgba(6,182,212,.04)">
+<div style="font-size:.95rem;font-weight:700;margin-bottom:.6rem">不知道用什么统计方法？回答几个问题帮你选</div>
+<div id="dtC"></div></div></div>
 
-<!-- 核心研究方法 -->
-<div class="sec" id="core">
-<h2 class="stitle">📚 核心研究方法</h2>
+<!-- 核心 -->
+<div class="sec" id="core"><h2 class="st">📚 核心研究方法</h2>
 
 <!-- 统计方法 -->
 <div id="stats" style="margin-bottom:1.5rem">
-<div class="tlink"><a href="https://www.amstat.org/" target="_blank" rel="noopener">📚 美国统计学会(ASA) 官方资源</a></div>
-<h3 style="margin-bottom:.8rem;color:var(--text);font-size:1.15rem">📊 医学统计学方法</h3>
-<div class="cgrid">
+<div class="tl"><a href="https://www.amstat.org/" target="_blank" rel="noopener">📚 美国统计学会(ASA) 官方资源</a></div>
+<h3 style="margin-bottom:.6rem;font-size:1.1rem">📊 医学统计学方法</h3>
+<div class="cg">
 
-<div class="card"><h3>P 值解读</h3><p class="desc"><strong>定义：</strong><a href="https://www.amstat.org/asa/files/pdfs/P-ValueStatement.pdf" target="_blank" rel="noopener">P值</a>：原假设H₀为真时，观察到当前或更极端结果的概率<br><strong>常见误区：</strong><ul><li>P&lt;0.05 ≠ 临床意义显著</li><li>P&gt;0.05 ≠ 无差异，可能样本量不足</li><li>多次检验导致假阳性升高</li></ul><strong>校正方法：</strong>Bonferroni校正、FDR、Benjamini-Hochberg法</p></div>
+<div class="cd"><h3>P 值解读</h3><p class="ds"><strong>定义：</strong><a href="https://www.amstat.org/asa/files/pdfs/P-ValueStatement.pdf" target="_blank" rel="noopener">P值</a>：原假设H₀为真时，观察到当前或更极端结果的概率<br><strong>常见误区：</strong><ul><li>P&lt;0.05 ≠ 临床意义显著</li><li>P&gt;0.05 ≠ 无差异，可能样本量不足</li><li>多次检验导致假阳性升高</li></ul><strong>校正：</strong>Bonferroni、FDR、Benjamini-Hochberg</p></div>
 
-<div class="card"><h3>置信区间 (CI)</h3><p class="desc"><strong>定义：</strong>参数估计的区间范围<br><strong>优势：</strong>同时展示效应大小与精度<br><ul><li>95%CI不含无效值 = 统计显著</li><li>区间越窄，估计精度越高</li></ul><strong>常用：</strong>率差、率比、均数差、风险比</p></div>
+<div class="cd"><h3>置信区间 (CI)</h3><p class="ds"><strong>定义：</strong>参数估计的区间范围<br><strong>优势：</strong>同时展示效应大小与精度<ul><li>95%CI不含无效值 = 统计显著</li><li>区间越窄，估计精度越高</li></ul><strong>常用：</strong>率差、率比、均数差、风险比</p></div>
 
-<div class="card" id="norm-card"><h3>数据前提检验</h3><p class="desc"><strong>正态性：</strong>Shapiro-Wilk检验、KS检验<button class="mbtn" onclick="togM(this)">查看详细操作</button>
-<div class="mexp">
-<div class="tabs"><button class="tab on" onclick="swTab(this,'ni')">方法介绍</button><button class="tab" onclick="swTab(this,'ns')">SPSS操作</button><button class="tab" onclick="swTab(this,'nr')">R代码</button><button class="tab" onclick="swTab(this,'np')">Python代码</button></div>
-<div class="tpane on" id="ni"><p>正态性检验判断数据是否服从正态分布，是参数检验的前提。Shapiro-Wilk适用于小样本(n&lt;50)，KS检验适用于大样本。</p></div>
-<div class="tpane" id="ns"><ol><li>分析 → 描述统计 → 探索</li><li>变量选入"因变量列表"</li><li>点击"绘制"，勾选"带检验的正态图"</li><li>确定后查看Shapiro-Wilk结果</li><li>p&gt;0.05 服从正态分布</li></ol></div>
-<div class="tpane" id="nr"><div class="cblk"><div class="chdr"><span class="clang">R</span><button class="cpbtn" onclick="cpC(this)">复制</button></div><div class="cbody" data-lang="r">shapiro.test(data$variable)
+<!-- 正态性 -->
+<div class="cd" id="cd-norm"><h3>数据前提检验</h3><p class="ds"><strong>正态性：</strong>Shapiro-Wilk、KS检验<button class="mb" onclick="togM(this)">查看详细操作</button>
+<div class="mx" style="display:none">
+<div class="tabs"><button class="tab on" onclick="swT(this,'ni')">方法介绍</button><button class="tab" onclick="swT(this,'ns')">SPSS操作</button><button class="tab" onclick="swT(this,'nr')">R代码</button><button class="tab" onclick="swT(this,'np')">Python代码</button></div>
+<div class="tp on" id="ni"><p>正态性检验判断数据是否服从正态分布，是参数检验的前提。Shapiro-Wilk适用于小样本(n&lt;50)，KS检验适用于大样本。</p></div>
+<div class="tp" id="ns"><ol><li>分析 → 描述统计 → 探索</li><li>变量选入"因变量列表"</li><li>点击"绘制"，勾选"带检验的正态图"</li><li>确定后查看Shapiro-Wilk结果</li><li>p&gt;0.05 服从正态分布</li></ol></div>
+<div class="tp" id="nr"><div class="cb"><div class="ch"><span class="cl2">R</span><button class="cp" onclick="cpC(this)">复制</button></div><div class="cy" data-lang="r">shapiro.test(data$variable)
 ks.test(data$variable, "pnorm",
         mean=mean(data$variable),
         sd=sd(data$variable))</div></div></div>
-<div class="tpane" id="np"><div class="cblk"><div class="chdr"><span class="clang">Python</span><button class="cpbtn" onclick="cpC(this)">复制</button></div><div class="cbody" data-lang="python">from scipy import stats
+<div class="tp" id="np"><div class="cb"><div class="ch"><span class="cl2">Python</span><button class="cp" onclick="cpC(this)">复制</button></div><div class="cy" data-lang="python">from scipy import stats
 stat, p = stats.shapiro(data['variable'])
-print(f'Shapiro-Wilk: 统计量={stat:.3f}, p值={p:.4f}')
+print(f'Shapiro-Wilk: stat={stat:.3f}, p={p:.4f}')
 stat, p = stats.kstest(data['variable'], 'norm',
     args=(data['variable'].mean(),
            data['variable'].std()))
-print(f'KS检验: 统计量={stat:.3f}, p值={p:.4f}')</div></div></div>
+print(f'KS: stat={stat:.3f}, p={p:.4f}')</div></div></div>
 </div>
 <br><strong>方差齐性：</strong>Levene检验、Bartlett检验<br><strong>数据类型：</strong><ul><li>定量：连续、离散</li><li>定性：二分类、多分类、有序</li><li>生存数据：含时间与截尾</li><li>重复测量：多时间点观测</li></ul></p></div>
 
-<div class="card" id="reg-card"><h3>回归模型</h3><p class="desc"><strong>类型：</strong>线性回归、Logistic回归、Cox回归<button class="mbtn" onclick="togM(this)">查看详细操作</button>
-<div class="mexp">
-<div class="tabs"><button class="tab on" onclick="swTab(this,'ri')">方法介绍</button><button class="tab" onclick="swTab(this,'rs2')">SPSS操作</button><button class="tab" onclick="swTab(this,'rr')">R代码</button><button class="tab" onclick="swTab(this,'rp')">Python代码</button></div>
-<div class="tpane on" id="ri"><p>线性回归用于连续因变量，Logistic用于二分类因变量，Cox用于生存数据的风险因素分析。</p></div>
-<div class="tpane" id="rs2"><h4 style="margin:.4rem 0;font-size:.9rem">线性回归</h4><ol><li>分析 → 回归 → 线性</li><li>因变量、自变量选入对应框</li><li>方法选"进入"</li><li>确定</li></ol><h4 style="margin:.4rem 0;font-size:.9rem">Logistic回归</h4><ol><li>分析 → 回归 → 二元Logistic</li><li>二分类因变量、协变量选入</li><li>确定查看OR值</li></ol><h4 style="margin:.4rem 0;font-size:.9rem">Cox回归</h4><ol><li>分析 → 生存分析 → Cox回归</li><li>时间、状态变量、协变量选入</li><li>确定</li></ol></div>
-<div class="tpane" id="rr"><div class="cblk"><div class="chdr"><span class="clang">R</span><button class="cpbtn" onclick="cpC(this)">复制</button></div><div class="cbody" data-lang="r">linear_model &lt;- lm(y ~ x1 + x2, data = data)
+<!-- 回归 -->
+<div class="cd" id="cd-reg"><h3>回归模型</h3><p class="ds"><strong>类型：</strong>线性回归、Logistic回归、Cox回归<button class="mb" onclick="togM(this)">查看详细操作</button>
+<div class="mx" style="display:none">
+<div class="tabs"><button class="tab on" onclick="swT(this,'ri')">方法介绍</button><button class="tab" onclick="swT(this,'rs')">SPSS操作</button><button class="tab" onclick="swT(this,'rr')">R代码</button><button class="tab" onclick="swT(this,'rp')">Python代码</button></div>
+<div class="tp on" id="ri"><p>线性回归用于连续因变量，Logistic用于二分类因变量，Cox用于生存数据的风险因素分析。</p></div>
+<div class="tp" id="rs"><h4 style="font-size:.85rem;margin:.3rem 0">线性回归</h4><ol><li>分析 → 回归 → 线性</li><li>因变量、自变量选入对应框</li><li>方法选"进入"</li><li>确定</li></ol><h4 style="font-size:.85rem;margin:.3rem 0">Logistic回归</h4><ol><li>分析 → 回归 → 二元Logistic</li><li>二分类因变量、协变量选入</li><li>确定查看OR值</li></ol><h4 style="font-size:.85rem;margin:.3rem 0">Cox回归</h4><ol><li>分析 → 生存分析 → Cox回归</li><li>时间、状态变量、协变量选入</li><li>确定</li></ol></div>
+<div class="tp" id="rr"><div class="cb"><div class="ch"><span class="cl2">R</span><button class="cp" onclick="cpC(this)">复制</button></div><div class="cy" data-lang="r">linear_model &lt;- lm(y ~ x1 + x2, data = data)
 summary(linear_model)
 logit_model &lt;- glm(group ~ x1 + x2, data = data,
                     family = binomial())
@@ -216,7 +191,7 @@ library(survival)
 cox_model &lt;- coxph(Surv(time, status) ~ x1 + x2,
                     data = data)
 summary(cox_model)</div></div></div>
-<div class="tpane" id="rp"><div class="cblk"><div class="chdr"><span class="clang">Python</span><button class="cpbtn" onclick="cpC(this)">复制</button></div><div class="cbody" data-lang="python">import numpy as np
+<div class="tp" id="rp"><div class="cb"><div class="ch"><span class="cl2">Python</span><button class="cp" onclick="cpC(this)">复制</button></div><div class="cy" data-lang="python">import numpy as np
 import statsmodels.api as sm
 from lifelines import CoxPHFitter
 X = sm.add_constant(data[['x1', 'x2']])
@@ -231,19 +206,20 @@ cph.print_summary()</div></div></div>
 </div>
 <br><strong>纵向数据：</strong>GEE、线性混合模型<br><strong>因果推断：</strong>PSM、IPTW、工具变量、断点回归、双重差分<br><strong>其他：</strong>中介分析、多重插补、竞争风险模型、结构方程模型</p></div>
 
-<div class="card" id="ttest-card"><h3>定量数据比较</h3><p class="desc"><strong>方法：</strong>t检验、ANOVA、非参数检验<button class="mbtn" onclick="togM(this)">查看详细操作</button>
-<div class="mexp">
-<div class="tabs"><button class="tab on" onclick="swTab(this,'ti')">方法介绍</button><button class="tab" onclick="swTab(this,'ts')">SPSS操作</button><button class="tab" onclick="swTab(this,'tr')">R代码</button><button class="tab" onclick="swTab(this,'tp')">Python代码</button></div>
-<div class="tpane on" id="ti"><p>t检验用于两组比较，ANOVA用于多组比较，非参数检验用于不满足正态性的数据。配对设计用配对t检验。</p></div>
-<div class="tpane" id="ts"><h4 style="margin:.4rem 0;font-size:.9rem">独立样本t检验</h4><ol><li>分析 → 比较均值 → 独立样本T检验</li><li>检验变量选入，分组变量定义组</li><li>确定</li></ol><h4 style="margin:.4rem 0;font-size:.9rem">单因素ANOVA</h4><ol><li>分析 → 比较均值 → 单因素ANOVA</li><li>因变量、因子选入</li><li>事后检验选LSD或Tukey</li><li>确定</li></ol></div>
-<div class="tpane" id="tr"><div class="cblk"><div class="chdr"><span class="clang">R</span><button class="cpbtn" onclick="cpC(this)">复制</button></div><div class="cbody" data-lang="r">t.test(y ~ group, data = data)
+<!-- t检验 -->
+<div class="cd" id="cd-ttest"><h3>定量数据比较</h3><p class="ds"><strong>方法：</strong>t检验、ANOVA、非参数检验<button class="mb" onclick="togM(this)">查看详细操作</button>
+<div class="mx" style="display:none">
+<div class="tabs"><button class="tab on" onclick="swT(this,'ti')">方法介绍</button><button class="tab" onclick="swT(this,'ts')">SPSS操作</button><button class="tab" onclick="swT(this,'tr')">R代码</button><button class="tab" onclick="swT(this,'tp')">Python代码</button></div>
+<div class="tp on" id="ti"><p>t检验用于两组比较，ANOVA用于多组比较，非参数检验用于不满足正态性的数据。配对设计用配对t检验。</p></div>
+<div class="tp" id="ts"><h4 style="font-size:.85rem;margin:.3rem 0">独立样本t检验</h4><ol><li>分析 → 比较均值 → 独立样本T检验</li><li>检验变量选入，分组变量定义组</li><li>确定</li></ol><h4 style="font-size:.85rem;margin:.3rem 0">单因素ANOVA</h4><ol><li>分析 → 比较均值 → 单因素ANOVA</li><li>因变量、因子选入</li><li>事后检验选LSD或Tukey</li><li>确定</li></ol></div>
+<div class="tp" id="tr"><div class="cb"><div class="ch"><span class="cl2">R</span><button class="cp" onclick="cpC(this)">复制</button></div><div class="cy" data-lang="r">t.test(y ~ group, data = data)
 t.test(before, after, paired = TRUE)
 aov_model &lt;- aov(y ~ group, data = data)
 summary(aov_model)
 TukeyHSD(aov_model)
 wilcox.test(y ~ group, data = data)
 kruskal.test(y ~ group, data = data)</div></div></div>
-<div class="tpane" id="tp"><div class="cblk"><div class="chdr"><span class="clang">Python</span><button class="cpbtn" onclick="cpC(this)">复制</button></div><div class="cbody" data-lang="python">from scipy import stats
+<div class="tp" id="tp"><div class="cb"><div class="ch"><span class="cl2">Python</span><button class="cp" onclick="cpC(this)">复制</button></div><div class="cy" data-lang="python">from scipy import stats
 import statsmodels.api as sm
 from statsmodels.formula.api import ols
 g1 = data[data['group']==0]['y']
@@ -255,17 +231,18 @@ print(sm.stats.anova_lm(model, typ=2))
 stat, p = stats.mannwhitneyu(g1, g2)
 print(f'Wilcoxon: stat={stat:.3f}, p={p:.4f}')</div></div></div>
 </div>
-<br><strong>定性数据：</strong>卡方检验、Fisher确切概率法、McNemar检验<br><strong>相关分析：</strong>Pearson相关、Spearman秩相关、Kendall相关<br><strong>一致性：</strong>ICC、Kappa</p></div>
+<br><strong>定性数据：</strong>卡方检验、Fisher确切概率法、McNemar检验<br><strong>相关分析：</strong>Pearson、Spearman、Kendall<br><strong>一致性：</strong>ICC、Kappa</p></div>
 
-<div class="card" id="chi-card"><h3>定性数据检验</h3><p class="desc"><strong>方法：</strong>卡方检验、Fisher确切概率法、McNemar检验<button class="mbtn" onclick="togM(this)">查看详细操作</button>
-<div class="mexp">
-<div class="tabs"><button class="tab on" onclick="swTab(this,'ci')">方法介绍</button><button class="tab" onclick="swTab(this,'cs')">SPSS操作</button><button class="tab" onclick="swTab(this,'cr')">R代码</button><button class="tab" onclick="swTab(this,'cp2')">Python代码</button></div>
-<div class="tpane on" id="ci"><p>卡方检验用于分类数据关联性分析。2×2表用Pearson卡方；期望频数&lt;5时用Fisher确切概率法；配对设计用McNemar检验。</p></div>
-<div class="tpane" id="cs"><ol><li>分析 → 描述统计 → 交叉表</li><li>行变量、列变量选入</li><li>点击"统计"，勾选"卡方"</li><li>期望频数&lt;5时勾选"Fisher精确检验"</li><li>确定</li></ol></div>
-<div class="tpane" id="cr"><div class="cblk"><div class="chdr"><span class="clang">R</span><button class="cpbtn" onclick="cpC(this)">复制</button></div><div class="cbody" data-lang="r">chisq.test(table)
+<!-- 卡方 -->
+<div class="cd" id="cd-chi"><h3>定性数据检验</h3><p class="ds"><strong>方法：</strong>卡方检验、Fisher确切概率法、McNemar检验<button class="mb" onclick="togM(this)">查看详细操作</button>
+<div class="mx" style="display:none">
+<div class="tabs"><button class="tab on" onclick="swT(this,'ci')">方法介绍</button><button class="tab" onclick="swT(this,'cs')">SPSS操作</button><button class="tab" onclick="swT(this,'cr')">R代码</button><button class="tab" onclick="swT(this,'cp2')">Python代码</button></div>
+<div class="tp on" id="ci"><p>卡方检验用于分类数据关联性分析。2×2表用Pearson卡方；期望频数&lt;5时用Fisher确切概率法；配对设计用McNemar检验。</p></div>
+<div class="tp" id="cs"><ol><li>分析 → 描述统计 → 交叉表</li><li>行变量、列变量选入</li><li>点击"统计"，勾选"卡方"</li><li>期望频数&lt;5时勾选"Fisher精确检验"</li><li>确定</li></ol></div>
+<div class="tp" id="cr"><div class="cb"><div class="ch"><span class="cl2">R</span><button class="cp" onclick="cpC(this)">复制</button></div><div class="cy" data-lang="r">chisq.test(table)
 fisher.test(table)
 mcnemar.test(table)</div></div></div>
-<div class="tpane" id="cp2"><div class="cblk"><div class="chdr"><span class="clang">Python</span><button class="cpbtn" onclick="cpC(this)">复制</button></div><div class="cbody" data-lang="python">from scipy.stats import chi2_contingency, fisher_exact, mcnemar
+<div class="tp" id="cp2"><div class="cb"><div class="ch"><span class="cl2">Python</span><button class="cp" onclick="cpC(this)">复制</button></div><div class="cy" data-lang="python">from scipy.stats import chi2_contingency, fisher_exact, mcnemar
 chi2, p, dof, exp = chi2_contingency(table)
 print(f'卡方={chi2:.3f}, p={p:.4f}')
 oddsratio, p = fisher_exact(table)
@@ -274,43 +251,45 @@ result = mcnemar(table, exact=True)
 print(f'McNemar: p={result.pvalue:.4f}')</div></div></div>
 </div></p></div>
 
-<div class="card" id="corr-card"><h3>相关与一致性分析</h3><p class="desc"><strong>相关分析：</strong>Pearson、Spearman、Kendall<button class="mbtn" onclick="togM(this)">查看详细操作</button>
-<div class="mexp">
-<div class="tabs"><button class="tab on" onclick="swTab(this,'coi')">方法介绍</button><button class="tab" onclick="swTab(this,'cor')">R代码</button><button class="tab" onclick="swTab(this,'cop')">Python代码</button></div>
-<div class="tpane on" id="coi"><p>Pearson用于正态连续变量，Spearman用于非正态或有序数据，Kendall对小样本更稳健。</p></div>
-<div class="tpane" id="cor"><div class="cblk"><div class="chdr"><span class="clang">R</span><button class="cpbtn" onclick="cpC(this)">复制</button></div><div class="cbody" data-lang="r">cor.test(data$x, data$y, method = "pearson")
+<!-- 相关 -->
+<div class="cd" id="cd-corr"><h3>相关与一致性分析</h3><p class="ds"><strong>相关：</strong>Pearson、Spearman、Kendall<button class="mb" onclick="togM(this)">查看详细操作</button>
+<div class="mx" style="display:none">
+<div class="tabs"><button class="tab on" onclick="swT(this,'coi')">方法介绍</button><button class="tab" onclick="swT(this,'cor')">R代码</button><button class="tab" onclick="swT(this,'cop')">Python代码</button></div>
+<div class="tp on" id="coi"><p>Pearson用于正态连续变量，Spearman用于非正态或有序数据，Kendall对小样本更稳健。</p></div>
+<div class="tp" id="cor"><div class="cb"><div class="ch"><span class="cl2">R</span><button class="cp" onclick="cpC(this)">复制</button></div><div class="cy" data-lang="r">cor.test(data$x, data$y, method = "pearson")
 cor.test(data$x, data$y, method = "spearman")
 cor.test(data$x, data$y, method = "kendall")</div></div></div>
-<div class="tpane" id="cop"><div class="cblk"><div class="chdr"><span class="clang">Python</span><button class="cpbtn" onclick="cpC(this)">复制</button></div><div class="cbody" data-lang="python">from scipy.stats import pearsonr, spearmanr, kendalltau
+<div class="tp" id="cop"><div class="cb"><div class="ch"><span class="cl2">Python</span><button class="cp" onclick="cpC(this)">复制</button></div><div class="cy" data-lang="python">from scipy.stats import pearsonr, spearmanr, kendalltau
 r, p = pearsonr(data['x'], data['y'])
 r, p = spearmanr(data['x'], data['y'])
 r, p = kendalltau(data['x'], data['y'])</div></div></div>
 </div>
-<br><strong>一致性：</strong>ICC（连续变量）、Kappa（分类变量）<button class="mbtn" onclick="togM(this)">查看一致性代码</button>
-<div class="mexp">
-<div class="tabs"><button class="tab on" onclick="swTab(this,'ici')">方法介绍</button><button class="tab" onclick="swTab(this,'icr')">R代码</button><button class="tab" onclick="swTab(this,'icp')">Python代码</button></div>
-<div class="tpane on" id="ici"><p>ICC评价连续变量测量一致性（不同评分者/仪器），Kappa评价分类变量一致性（诊断结果）。</p></div>
-<div class="tpane" id="icr"><div class="cblk"><div class="chdr"><span class="clang">R</span><button class="cpbtn" onclick="cpC(this)">复制</button></div><div class="cbody" data-lang="r">library(irr)
+<br><strong>一致性：</strong>ICC、Kappa<button class="mb" onclick="togM(this)">查看一致性代码</button>
+<div class="mx" style="display:none">
+<div class="tabs"><button class="tab on" onclick="swT(this,'ici')">方法介绍</button><button class="tab" onclick="swT(this,'icr')">R代码</button><button class="tab" onclick="swT(this,'icp')">Python代码</button></div>
+<div class="tp on" id="ici"><p>ICC评价连续变量测量一致性，Kappa评价分类变量一致性。</p></div>
+<div class="tp" id="icr"><div class="cb"><div class="ch"><span class="cl2">R</span><button class="cp" onclick="cpC(this)">复制</button></div><div class="cy" data-lang="r">library(irr)
 icc(data, model = "twoway", type = "consistency")
 kappa2(rater1, rater2)</div></div></div>
-<div class="tpane" id="icp"><div class="cblk"><div class="chdr"><span class="clang">Python</span><button class="cpbtn" onclick="cpC(this)">复制</button></div><div class="cbody" data-lang="python">import pingouin as pg
+<div class="tp" id="icp"><div class="cb"><div class="ch"><span class="cl2">Python</span><button class="cp" onclick="cpC(this)">复制</button></div><div class="cy" data-lang="python">import pingouin as pg
 icc = pg.intraclass_corr(data, targets='subject',
                          raters='rater', ratings='score')
 print(icc)</div></div></div>
 </div></p></div>
 
-<div class="card"><h3>诊断试验评价</h3><p class="desc"><strong>核心指标：</strong>灵敏度、特异度、约登指数<br><strong>预测值：</strong>PPV、NPV、似然比<br><strong>综合评价：</strong>ROC曲线、AUC、校准曲线<br><strong>报告规范：</strong><a href="https://www.stard-statement.org/" target="_blank" rel="noopener">STARD</a></p></div>
+<!-- 诊断试验 -->
+<div class="cd"><h3>诊断试验评价</h3><p class="ds"><strong>核心指标：</strong>灵敏度、特异度、约登指数<br><strong>预测值：</strong>PPV、NPV、似然比<br><strong>综合评价：</strong>ROC曲线、AUC、校准曲线<br><strong>报告规范：</strong><a href="https://www.stard-statement.org/" target="_blank" rel="noopener">STARD</a></p></div>
 
 </div></div>
 
 <!-- 生物信息学 -->
 <div id="bioinfo" style="margin-bottom:1.5rem">
-<div class="tlink"><a href="https://bioconductor.org/" target="_blank" rel="noopener">🧬 Bioconductor 工具库</a></div>
-<h3 style="margin-bottom:.8rem;color:var(--text);font-size:1.15rem">🧬 生物信息学分析方法</h3>
-<div class="cgrid">
-<div class="card"><h3>差异表达分析</h3><p class="desc">筛选不同组间表达量显著差异的基因<button class="mbtn" onclick="togM(this)">查看代码</button>
-<div class="mexp"><div class="tabs"><button class="tab on" onclick="swTab(this,'dr')">R代码</button><button class="tab" onclick="swTab(this,'dp')">Python代码</button></div>
-<div class="tpane on" id="dr"><div class="cblk"><div class="chdr"><span class="clang">R</span><button class="cpbtn" onclick="cpC(this)">复制</button></div><div class="cbody" data-lang="r">library(edgeR)
+<div class="tl"><a href="https://bioconductor.org/" target="_blank" rel="noopener">🧬 Bioconductor 工具库</a></div>
+<h3 style="margin-bottom:.6rem;font-size:1.1rem">🧬 生物信息学分析方法</h3>
+<div class="cg">
+<div class="cd"><h3>差异表达分析</h3><p class="ds">筛选不同组间表达量显著差异的基因<button class="mb" onclick="togM(this)">查看代码</button>
+<div class="mx" style="display:none"><div class="tabs"><button class="tab on" onclick="swT(this,'dr')">R代码</button><button class="tab" onclick="swT(this,'dp')">Python代码</button></div>
+<div class="tp on" id="dr"><div class="cb"><div class="ch"><span class="cl2">R</span><button class="cp" onclick="cpC(this)">复制</button></div><div class="cy" data-lang="r">library(edgeR)
 y &lt;- DGEList(counts = count_matrix,
                group = sample_info$group)
 y &lt;- calcNormFactors(y)
@@ -319,15 +298,15 @@ y &lt;- estimateDisp(y, design)
 fit &lt;- glmQLFit(y, design)
 qlf &lt;- glmQLFTest(fit, contrast=c(1,-1))
 deg &lt;- topTags(qlf, n=Inf)</div></div></div>
-<div class="tpane" id="dp"><div class="cblk"><div class="chdr"><span class="clang">Python</span><button class="cpbtn" onclick="cpC(this)">复制</button></div><div class="cbody" data-lang="python">import scanpy as sc
+<div class="tp" id="dp"><div class="cb"><div class="ch"><span class="cl2">Python</span><button class="cp" onclick="cpC(this)">复制</button></div><div class="cy" data-lang="python">import scanpy as sc
 adata = sc.read_h5ad('data.h5ad')
 sc.tl.rank_genes_groups(adata, 'group', method='wilcoxon')
 deg = sc.get.rank_genes_groups_df(adata, group='treatment')</div></div></div>
 </div><p><strong>工具：</strong>edgeR、DESeq2、limma</p></div>
 
-<div class="card"><h3>功能富集分析</h3><p class="desc">对差异基因进行功能注释<button class="mbtn" onclick="togM(this)">查看代码</button>
-<div class="mexp"><div class="tabs"><button class="tab on" onclick="swTab(this,'er')">R代码</button><button class="tab" onclick="swTab(this,'ep')">Python代码</button></div>
-<div class="tpane on" id="er"><div class="cblk"><div class="chdr"><span class="clang">R</span><button class="cpbtn" onclick="cpC(this)">复制</button></div><div class="cbody" data-lang="r">library(clusterProfiler)
+<div class="cd"><h3>功能富集分析</h3><p class="ds">对差异基因进行功能注释<button class="mb" onclick="togM(this)">查看代码</button>
+<div class="mx" style="display:none"><div class="tabs"><button class="tab on" onclick="swT(this,'er')">R代码</button><button class="tab" onclick="swT(this,'ep')">Python代码</button></div>
+<div class="tp on" id="er"><div class="cb"><div class="ch"><span class="cl2">R</span><button class="cp" onclick="cpC(this)">复制</button></div><div class="cy" data-lang="r">library(clusterProfiler)
 library(org.Hs.eg.db)
 go_enrich &lt;- enrichGO(gene = deg_gene,
   OrgDb = org.Hs.eg.db, keyType = "ENTREZID",
@@ -335,17 +314,17 @@ go_enrich &lt;- enrichGO(gene = deg_gene,
   qvalueCutoff = 0.05)
 kegg_enrich &lt;- enrichKEGG(gene = deg_gene,
   organism = 'hsa', pvalueCutoff = 0.05)</div></div></div>
-<div class="tpane" id="ep"><div class="cblk"><div class="chdr"><span class="clang">Python</span><button class="cpbtn" onclick="cpC(this)">复制</button></div><div class="cbody" data-lang="python">import gseapy as gp
+<div class="tp" id="ep"><div class="cb"><div class="ch"><span class="cl2">Python</span><button class="cp" onclick="cpC(this)">复制</button></div><div class="cy" data-lang="python">import gseapy as gp
 go_res = gp.enrichr(gene_list=deg_gene,
     gene_sets='GO_Biological_Process_2023',
     organism='Human', cutoff=0.05)
 kegg_res = gp.enrichr(gene_list=deg_gene,
     gene_sets='KEGG_2023_Human', organism='Human')</div></div></div>
-</div><p><strong>数据库：</strong>GO、KEGG、Reactome、DO</p></div>
+</div><p><strong>数据库：</strong>GO、KEGG、Reactome</p></div>
 
-<div class="card"><h3>WGCNA</h3><p class="desc">构建基因共表达网络<button class="mbtn" onclick="togM(this)">查看代码</button>
-<div class="mexp"><div class="tabs"><button class="tab on" onclick="swTab(this,'wr')">R代码</button></div>
-<div class="tpane on" id="wr"><div class="cblk"><div class="chdr"><span class="clang">R</span><button class="cpbtn" onclick="cpC(this)">复制</button></div><div class="cbody" data-lang="r">library(WGCNA)
+<div class="cd"><h3>WGCNA</h3><p class="ds">构建基因共表达网络<button class="mb" onclick="togM(this)">查看代码</button>
+<div class="mx" style="display:none"><div class="tabs"><button class="tab on" onclick="swT(this,'wr')">R代码</button></div>
+<div class="tp on" id="wr"><div class="cb"><div class="ch"><span class="cl2">R</span><button class="cp" onclick="cpC(this)">复制</button></div><div class="cy" data-lang="r">library(WGCNA)
 powers = c(c(1:10), seq(from=12, to=20, by=2))
 sft = pickSoftThreshold(exprMatrix,
   powerVector = powers, verbose = 5)
@@ -354,12 +333,11 @@ net = blockwiseModules(exprMatrix,
   TOMType = "unsigned", minModuleSize = 30,
   mergeCutHeight = 0.25, numericLabels = TRUE,
   saveTOMs = TRUE, verbose = 3)
-moduleTraitCor = cor(net$MEs, trait, use = "p")</div></div></div></div>
-<p><strong>应用：</strong>疾病标志物筛选、通路挖掘</p></div>
+moduleTraitCor = cor(net$MEs, trait, use = "p")</div></div></div></div></div>
 
-<div class="card"><h3>免疫浸润分析</h3><p class="desc">评估肿瘤微环境免疫细胞浸润<button class="mbtn" onclick="togM(this)">查看代码</button>
-<div class="mexp"><div class="tabs"><button class="tab on" onclick="swTab(this,'ir')">R代码</button></div>
-<div class="tpane on" id="ir"><div class="cblk"><div class="chdr"><span class="clang">R</span><button class="cpbtn" onclick="cpC(this)">复制</button></div><div class="cbody" data-lang="r">library(CIBERSORT)
+<div class="cd"><h3>免疫浸润分析</h3><p class="ds">评估肿瘤微环境免疫细胞浸润<button class="mb" onclick="togM(this)">查看代码</button>
+<div class="mx" style="display:none"><div class="tabs"><button class="tab on" onclick="swT(this,'ir')">R代码</button></div>
+<div class="tp on" id="ir"><div class="cb"><div class="ch"><span class="cl2">R</span><button class="cp" onclick="cpC(this)">复制</button></div><div class="cy" data-lang="r">library(CIBERSORT)
 sig_matrix = read.table('LM22.txt',
   header=T, row.names=1, sep='\t')
 results = CIBERSORT(sig_matrix,
@@ -368,50 +346,50 @@ barplot(t(results[,1:22]),
   col=rainbow(22), border=NA)</div></div></div></div>
 <p><strong>算法：</strong>CIBERSORT、xCell、MCP-counter</p></div>
 
-<div class="card"><h3>单细胞测序分析</h3><p class="desc">细胞分群、轨迹分析、细胞通讯</p><p><strong>工具：</strong>Seurat、Scanpy、Monocle、CellPhoneDB</p></div>
-<div class="card"><h3>生存分析</h3><p class="desc">评估基因表达与患者预后</p><p><strong>方法：</strong>Kaplan-Meier、Cox回归、LASSO回归</p></div>
+<div class="cd"><h3>单细胞测序分析</h3><p class="ds">细胞分群、轨迹分析、细胞通讯<br><strong>工具：</strong>Seurat、Scanpy、Monocle、CellPhoneDB</p></div>
+<div class="cd"><h3>生存分析</h3><p class="ds">评估基因表达与患者预后<br><strong>方法：</strong>Kaplan-Meier、Cox回归、LASSO回归</p></div>
 </div></div>
 
-<!-- 样本量计算 -->
+<!-- 样本量 -->
 <div style="margin-bottom:1.5rem">
-<div class="tlink"><a href="https://www.openepi.com/" target="_blank" rel="noopener">📊 OpenEpi 样本量计算</a></div>
-<h3 style="margin-bottom:.8rem;color:var(--text);font-size:1.15rem">🧮 样本量计算</h3>
-<div class="cgrid">
-<div class="card"><h3>核心参数</h3><p class="desc"><strong>α值：</strong>一类错误，通常0.05<br><strong>β值：</strong>二类错误，通常0.2，效能80%<br><strong>效应量：</strong>组间预期差异<br><strong>脱落率：</strong>10–20%<br><strong>单侧/双侧：</strong>临床研究优先双侧</p></div>
-<div class="card"><h3>计算场景</h3><p class="desc">均值比较：t检验、ANOVA<br>率的比较：卡方、病例对照、队列<br>生存分析：Log-rank、Cox回归<br>诊断试验：灵敏度、特异度<br>等效性/非劣效性试验</p></div>
-<div class="card"><h3>计算工具</h3><div class="tgrid" style="margin:0;padding:0">
-<div class="titem"><a href="https://www.openepi.com/" target="_blank" rel="noopener">OpenEpi</a><p>在线统计</p></div>
-<div class="titem"><a href="https://www.gpower.hhu.de/" target="_blank" rel="noopener">G*Power</a><p>样本量</p></div>
-<div class="titem"><a href="https://www.sample-size.net/" target="_blank" rel="noopener">SampleSize</a><p>专业计算</p></div>
-<div class="titem"><a href="https://sealedenvelope.com/power/" target="_blank" rel="noopener">Sealed Envelope</a><p>临床研究</p></div>
+<div class="tl"><a href="https://www.openepi.com/" target="_blank" rel="noopener">📊 OpenEpi 样本量计算</a></div>
+<h3 style="margin-bottom:.6rem;font-size:1.1rem">🧮 样本量计算</h3>
+<div class="cg">
+<div class="cd"><h3>核心参数</h3><p class="ds"><strong>α值：</strong>一类错误，通常0.05<br><strong>β值：</strong>二类错误，通常0.2，效能80%<br><strong>效应量：</strong>组间预期差异<br><strong>脱落率：</strong>10–20%<br><strong>单侧/双侧：</strong>临床研究优先双侧</p></div>
+<div class="cd"><h3>计算场景</h3><p class="ds">均值比较：t检验、ANOVA<br>率的比较：卡方、病例对照、队列<br>生存分析：Log-rank、Cox回归<br>诊断试验：灵敏度、特异度<br>等效性/非劣效性试验</p></div>
+<div class="cd"><h3>计算工具</h3><div class="tg" style="margin:0">
+<div class="ti2"><a href="https://www.openepi.com/" target="_blank" rel="noopener">OpenEpi</a><p>在线统计</p></div>
+<div class="ti2"><a href="https://www.gpower.hhu.de/" target="_blank" rel="noopener">G*Power</a><p>样本量</p></div>
+<div class="ti2"><a href="https://www.sample-size.net/" target="_blank" rel="noopener">SampleSize</a><p>专业计算</p></div>
+<div class="ti2"><a href="https://sealedenvelope.com/power/" target="_blank" rel="noopener">Sealed Envelope</a><p>临床研究</p></div>
 </div></div>
 </div>
 
 <!-- 传染病建模 -->
 <div id="modeling" style="margin-bottom:1.5rem">
-<div class="tlink"><a href="https://www.who.int/" target="_blank" rel="noopener">📈 WHO 建模指南</a></div>
-<h3 style="margin-bottom:.8rem;color:var(--text);font-size:1.15rem">📈 传染病数学建模</h3>
-<p class="desc">传染病建模是预测疾病传播、评估防控措施的核心方法。</p>
-<button class="tbtn" onclick="togT(this)">📚 点击查看完整建模教程</button>
-<div class="texp">
-<h4 style="margin-top:.3rem">一、核心概念</h4>
-<div class="param">S(t)：易感者 | E(t)：潜伏者 | I(t)：感染者 | R(t)：康复者 | M(t)：死亡者</div>
-<div class="param">β：传染率 | σ：潜伏转染率 | γ：康复率 | ξ：免疫丧失率 | μ：死亡率</div>
+<div class="tl"><a href="https://www.who.int/" target="_blank" rel="noopener">📈 WHO 建模指南</a></div>
+<h3 style="margin-bottom:.6rem;font-size:1.1rem">📈 传染病数学建模</h3>
+<p class="ds">传染病建模是预测疾病传播、评估防控措施的核心方法。</p>
+<button class="tb" onclick="togT(this)">📚 点击查看完整建模教程</button>
+<div class="tx" style="display:none">
+<h4 style="font-size:.9rem">一、核心概念</h4>
+<div class="par">S(t)：易感者 | E(t)：潜伏者 | I(t)：感染者 | R(t)：康复者 | M(t)：死亡者</div>
+<div class="par">β：传染率 | σ：潜伏转染率 | γ：康复率 | ξ：免疫丧失率 | μ：死亡率</div>
 <div class="note"><strong>dX/dt = 人群每日变化量 | R₀=β/γ：基本再生数</strong></div>
-<h4 style="margin-top:.8rem">二、四大经典模型</h4>
-<div class="mcard"><h4>1. SIR</h4><div class="formula">dS/dt=-βSI/N &nbsp; dI/dt=βSI/N-γI &nbsp; dR/dt=γI</div></div>
-<div class="mcard"><h4>2. SEIR</h4><div class="formula">dS/dt=-βSI/N &nbsp; dE/dt=βSI/N-σE &nbsp; dI/dt=σE-γI &nbsp; dR/dt=γI</div></div>
-<div class="mcard"><h4>3. SEIRS</h4><div class="formula">dS/dt=-βSI/N+ξR &nbsp; dE/dt=βSI/N-σE &nbsp; dI/dt=σE-γI &nbsp; dR/dt=γI-ξR</div></div>
-<div class="mcard"><h4>4. MSEIR</h4><div class="formula">dS/dt=-βSI/N &nbsp; dE/dt=βSI/N-σE &nbsp; dI/dt=σE-(γ+μ)I &nbsp; dR/dt=γI &nbsp; dM/dt=μI</div></div>
-<h4 style="margin-top:.8rem">三、参数表</h4>
-<table class="dtbl"><tr><th>符号</th><th>名称</th><th>计算方法</th><th>参考</th></tr>
+<h4 style="font-size:.9rem;margin-top:.6rem">二、四大经典模型</h4>
+<div class="pm"><h4>1. SIR</h4><div class="fm">dS/dt=-βSI/N &nbsp; dI/dt=βSI/N-γI &nbsp; dR/dt=γI</div></div>
+<div class="pm"><h4>2. SEIR</h4><div class="fm">dS/dt=-βSI/N &nbsp; dE/dt=βSI/N-σE &nbsp; dI/dt=σE-γI &nbsp; dR/dt=γI</div></div>
+<div class="pm"><h4>3. SEIRS</h4><div class="fm">dS/dt=-βSI/N+ξR &nbsp; dE/dt=βSI/N-σE &nbsp; dI/dt=σE-γI &nbsp; dR/dt=γI-ξR</div></div>
+<div class="pm"><h4>4. MSEIR</h4><div class="fm">dS/dt=-βSI/N &nbsp; dE/dt=βSI/N-σE &nbsp; dI/dt=σE-(γ+μ)I &nbsp; dR/dt=γI &nbsp; dM/dt=μI</div></div>
+<h4 style="font-size:.9rem;margin-top:.6rem">三、参数表</h4>
+<table class="dtb"><tr><th>符号</th><th>名称</th><th>计算</th><th>参考</th></tr>
 <tr><td>β</td><td>传染率</td><td>接触率×感染概率</td><td>CDC</td></tr>
 <tr><td>σ</td><td>潜伏率</td><td>1/潜伏期</td><td>临床数据</td></tr>
 <tr><td>γ</td><td>康复率</td><td>1/传染期</td><td>疾病自然史</td></tr>
 <tr><td>R₀</td><td>再生数</td><td>β/γ</td><td>WHO</td></tr></table>
-<h4 style="margin-top:.8rem">四、Python 实战代码</h4>
-<p class="desc">依赖：<code>pip install numpy scipy matplotlib</code></p>
-<div class="cblk"><div class="chdr"><span class="clang">Python</span><button class="cpbtn" onclick="cpC(this)">复制</button></div><div class="cbody" data-lang="python">import numpy as np
+<h4 style="font-size:.9rem;margin-top:.6rem">四、Python 实战</h4>
+<p class="ds">依赖：<code>pip install numpy scipy matplotlib</code></p>
+<div class="cb"><div class="ch"><span class="cl2">Python</span><button class="cp" onclick="cpC(this)">复制</button></div><div class="cy" data-lang="python">import numpy as np
 from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 
@@ -437,120 +415,54 @@ plt.plot(t, S, label='易感者')
 plt.plot(t, E, label='潜伏者')
 plt.plot(t, I, label='感染者', c='red')
 plt.plot(t, R, label='康复者')
-plt.xlabel('天数')
-plt.ylabel('人数')
-plt.title('SEIR传染病模型模拟')
-plt.legend()
-plt.show()</div></div>
-<h4 style="margin-top:.8rem">五、常见问题</h4>
-<p class="desc">✅ 模型不收敛：调整参数/优化求解器<br>✅ 结果不符实际：重新校准参数<br>✅ 无真实数据：文献R₀值</p>
+plt.xlabel('天数'); plt.ylabel('人数')
+plt.title('SEIR模型模拟')
+plt.legend(); plt.show()</div></div>
+</div>
+
+<!-- 临床研究 -->
+<div class="cg" style="margin-top:1rem">
+<div class="cd"><h3>📝 临床研究设计</h3><p class="ds"><strong>证据等级：</strong>RCT &gt; 队列 &gt; 病例对照 &gt; 横断面<br><strong>观察性：</strong>横断面、病例对照(OR)、队列(RR，遵循<a href="https://www.strobe-statement.org/" target="_blank" rel="noopener">STROBE</a>)<br><strong>实验性：</strong>RCT(遵循<a href="https://www.consort-statement.org/" target="_blank" rel="noopener">CONSORT</a>)、诊断试验(遵循<a href="https://www.stard-statement.org/" target="_blank" rel="noopener">STARD</a>)<br><strong>量表：</strong>遵循<a href="https://www.cosmin.nl/" target="_blank" rel="noopener">COSMIN</a></p></div>
+<div class="cd"><h3>🏥 真实世界研究</h3><p class="ds"><strong>数据来源：</strong>EHR、医保、登记库<br><strong>混杂控制：</strong>PSM、IPTW、DID、工具变量<br><strong>报告规范：</strong><a href="https://record-statement.org/" target="_blank" rel="noopener">RECORD</a></p></div>
+<div class="cd"><h3>🤖 医学机器学习</h3><p class="ds"><strong>算法：</strong>LASSO、随机森林、XGBoost、SVM、CNN、LSTM<br><strong>要求：</strong>SHAP可解释性、校准曲线、外部验证、DCA<br><strong>规范：</strong><a href="https://www.equator-network.org/library/transparent-reporting-of-a-multivariable-prediction-model-for-individual-prognosis-or-diagnosis-tripod/" target="_blank" rel="noopener">TRIPOD</a></p></div>
+<div class="cd"><h3>⏳ 生存分析</h3><p class="ds"><strong>基础：</strong>Kaplan-Meier、Log-rank检验<br><strong>多因素：</strong>Cox比例风险回归<br><strong>前提：</strong>比例风险假设PH检验<br><strong>拓展：</strong>竞争风险、时变协变量</p></div>
 </div>
 </div>
 
-<!-- 临床研究等 -->
-<div class="cgrid" style="margin-bottom:1.5rem">
-<div class="card"><h3>📝 临床研究设计</h3><p class="desc"><strong>证据等级：</strong>RCT &gt; 队列 &gt; 病例对照 &gt; 横断面<br><strong>观察性研究：</strong>横断面、病例对照、队列(遵循<a href="https://www.strobe-statement.org/" target="_blank" rel="noopener">STROBE</a>)<br><strong>实验性研究：</strong>RCT(遵循<a href="https://www.consort-statement.org/" target="_blank" rel="noopener">CONSORT</a>)、诊断试验(遵循<a href="https://www.stard-statement.org/" target="_blank" rel="noopener">STARD</a>)<br><strong>量表研究：</strong>遵循<a href="https://www.cosmin.nl/" target="_blank" rel="noopener">COSMIN</a></p></div>
-<div class="card"><h3>🏥 真实世界研究</h3><p class="desc"><strong>数据来源：</strong>EHR、医保、登记库<br><strong>混杂控制：</strong>PSM、IPTW、DID、工具变量<br><strong>报告规范：</strong><a href="https://record-statement.org/" target="_blank" rel="noopener">RECORD</a><br><strong>优势：</strong>外推性强、样本量大</p></div>
-<div class="card"><h3>🤖 医学机器学习</h3><p class="desc"><strong>算法：</strong>LASSO、随机森林、XGBoost、SVM、CNN、LSTM<br><strong>医学要求：</strong>SHAP可解释性、校准曲线、外部验证、DCA<br><strong>报告规范：</strong><a href="https://www.equator-network.org/library/transparent-reporting-of-a-multivariable-prediction-model-for-individual-prognosis-or-diagnosis-tripod/" target="_blank" rel="noopener">TRIPOD</a></p></div>
-<div class="card"><h3>⏳ 生存分析</h3><p class="desc"><strong>基础：</strong>Kaplan-Meier曲线、Log-rank检验<br><strong>多因素：</strong>Cox比例风险回归<br><strong>前提：</strong>比例风险假设PH检验<br><strong>拓展：</strong>竞争风险模型、时变协变量</p></div>
-</div>
-</div>
-
-<!-- 医学数据库 -->
+<!-- 数据库 -->
 <div class="sec" id="databases">
-<div class="mhdr" onclick="togMod(this)"><div class="mtitle">💾 医学公共数据库</div><span class="ticon">▼</span></div>
-<div class="mcont">
-<div class="subt">🌍 全球公共卫生</div>
-<div class="tgrid"><div class="titem"><a href="https://www.who.int/" target="_blank" rel="noopener">WHO</a><p>世界卫生组织</p></div><div class="titem"><a href="https://www.cdc.gov/" target="_blank" rel="noopener">US CDC</a><p>美国疾控中心</p></div><div class="titem"><a href="https://ghdx.healthdata.org/" target="_blank" rel="noopener">GBD</a><p>全球疾病负担</p></div><div class="titem"><a href="https://www.worldbank.org/" target="_blank" rel="noopener">World Bank</a><p>世界银行</p></div><div class="titem"><a href="https://apps.who.int/gho/" target="_blank" rel="noopener">WHO GHO</a><p>健康观测库</p></div><div class="titem"><a href="https://www.ecdc.europa.eu/" target="_blank" rel="noopener">ECDC</a><p>欧洲疾控</p></div></div>
-<div class="subt">🏥 临床重症</div>
-<div class="tgrid"><div class="titem"><a href="https://mimic.mit.edu/" target="_blank" rel="noopener">MIMIC-IV</a><p>重症数据库</p></div><div class="titem"><a href="https://eicu-crd.mit.edu/" target="_blank" rel="noopener">eICU</a><p>多中心重症</p></div><div class="titem"><a href="https://www.physionet.org/" target="_blank" rel="noopener">PhysioNet</a><p>生理信号</p></div></div>
-<div class="subt">👥 人群队列</div>
-<div class="tgrid"><div class="titem"><a href="https://www.ukbiobank.ac.uk/" target="_blank" rel="noopener">UK Biobank</a><p>英国50万队列</p></div><div class="titem"><a href="https://wwwn.cdc.gov/nchs/nhanes/" target="_blank" rel="noopener">NHANES</a><p>美国健康营养</p></div><div class="titem"><a href="https://charls.pku.edu.cn/" target="_blank" rel="noopener">CHARLS</a><p>中国健康养老</p></div><div class="titem"><a href="https://www.cancer.gov/about-nci/organization/ccg/research/structural-genomics/tcga" target="_blank" rel="noopener">TCGA</a><p>肿瘤基因组</p></div><div class="titem"><a href="https://www.cdcgs.org.cn/" target="_blank" rel="noopener">China Kadoorie</a><p>中国50万队列</p></div></div>
-<div class="subt">🎗 肿瘤精准医学</div>
-<div class="tgrid"><div class="titem"><a href="https://portal.gdc.cancer.gov/" target="_blank" rel="noopener">GDC</a><p>癌症基因组</p></div><div class="titem"><a href="https://seer.cancer.gov/" target="_blank" rel="noopener">SEER</a><p>肿瘤登记</p></div><div class="titem"><a href="https://www.cbioportal.org/" target="_blank" rel="noopener">cBioPortal</a><p>肿瘤多组学</p></div><div class="titem"><a href="https://string-db.org/" target="_blank" rel="noopener">STRING</a><p>蛋白互作</p></div></div>
-<div class="subt">🦠 微生物</div>
-<div class="tgrid"><div class="titem"><a href="https://www.ncbi.nlm.nih.gov/genome/" target="_blank" rel="noopener">NCBI Genome</a><p>微生物基因组</p></div><div class="titem"><a href="https://gtdb.ecogenomic.org/" target="_blank" rel="noopener">GTDB</a><p>基因组分类</p></div><div class="titem"><a href="https://www.ebi.ac.uk/ena/" target="_blank" rel="noopener">ENA</a><p>核酸序列</p></div><div class="titem"><a href="https://www.patricbrc.org/" target="_blank" rel="noopener">PATRIC</a><p>病原微生物</p></div></div>
-<div class="subt">💊 药学/药物基因组</div>
-<div class="tgrid"><div class="titem"><a href="https://www.drugbank.com/" target="_blank" rel="noopener">DrugBank</a><p>药物综合库</p></div><div class="titem"><a href="https://www.pharmgkb.org/" target="_blank" rel="noopener">PharmGKB</a><p>药物基因组</p></div><div class="titem"><a href="https://pubchem.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">PubChem</a><p>化合物结构</p></div><div class="titem"><a href="https://www.dgidb.org/" target="_blank" rel="noopener">DGIdb</a><p>药物基因互作</p></div></div>
-<div class="subt">🧬 罕见病/遗传病</div>
-<div class="tgrid"><div class="titem"><a href="https://www.orpha.net/" target="_blank" rel="noopener">Orphanet</a><p>罕见病</p></div><div class="titem"><a href="https://omim.org/" target="_blank" rel="noopener">OMIM</a><p>孟德尔遗传</p></div><div class="titem"><a href="https://www.genenames.org/" target="_blank" rel="noopener">HGNC</a><p>基因命名</p></div><div class="titem"><a href="https://www.ncbi.nlm.nih.gov/clinvar/" target="_blank" rel="noopener">ClinVar</a><p>临床变异</p></div></div>
-<div class="subt">📜 循证医学</div>
-<div class="tgrid"><div class="titem"><a href="https://www.cochranelibrary.com/" target="_blank" rel="noopener">Cochrane</a><p>循证医学</p></div><div class="titem"><a href="https://www.uptodate.com/" target="_blank" rel="noopener">UpToDate</a><p>临床决策</p></div></div>
-<div class="subt">🇨🇳 中国本土</div>
-<div class="tgrid"><div class="titem"><a href="https://nmdc.cn/" target="_blank" rel="noopener">NMDC</a><p>国家微生物</p></div><div class="titem"><a href="https://www.chinacdc.cn/" target="_blank" rel="noopener">中国CDC</a><p>国家疾控</p></div><div class="titem"><a href="https://www.cncb.ac.cn/" target="_blank" rel="noopener">CNCB</a><p>国家基因组</p></div><div class="titem"><a href="https://db.cngb.org/" target="_blank" rel="noopener">CNGB</a><p>国家生物信息</p></div><div class="titem"><a href="https://pubscholar.cn/" target="_blank" rel="noopener">PubScholar</a><p>科技文献</p></div><div class="titem"><a href="https://www.nsfc.gov.cn/" target="_blank" rel="noopener">国自然</a><p>自然科学基金</p></div></div>
-<div class="subt">🧪 生信/组学</div>
-<div class="tgrid"><div class="titem"><a href="https://www.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">NCBI</a><p>生物技术中心</p></div><div class="titem"><a href="https://www.ebi.ac.uk/" target="_blank" rel="noopener">EBI</a><p>欧洲生信所</p></div><div class="titem"><a href="https://opengwas.io/" target="_blank" rel="noopener">OpenGWAS</a><p>全基因组关联</p></div><div class="titem"><a href="https://gtexportal.org/" target="_blank" rel="noopener">GTEx</a><p>组织表达</p></div><div class="titem"><a href="https://www.ncbi.nlm.nih.gov/geo/" target="_blank" rel="noopener">GEO</a><p>基因表达</p></div><div class="titem"><a href="https://www.ncbi.nlm.nih.gov/pmc/" target="_blank" rel="noopener">PMC</a><p>免费全文</p></div><div class="titem"><a href="https://clinicaltrials.gov/" target="_blank" rel="noopener">ClinicalTrials</a><p>临床试验注册</p></div></div>
-</div></div>
+<div class="mh" onclick="togMod(this)"><div class="mt">💾 医学公共数据库</div><span class="ti">▼</span></div>
+<div class="mc" style="display:none" id="mc-db"></div>
+</div>
 
 <!-- 科研工具 -->
 <div class="sec" id="tools">
-<div class="mhdr" onclick="togMod(this)"><div class="mtitle">🔬 科研工具 & 科研神器</div><span class="ticon">▼</span></div>
-<div class="mcont">
-<div class="subt">📌 学术导航</div>
-<div class="tgrid"><div class="titem"><a href="http://www.4243.net/" target="_blank" rel="noopener">大木虫</a><p>学术入口</p></div><div class="titem"><a href="https://www.ablesci.com/" target="_blank" rel="noopener">科研通</a><p>科研平台</p></div><div class="titem"><a href="http://www.sci-hub.ac.cn/" target="_blank" rel="noopener">文献小镇</a><p>文献获取</p></div><div class="titem"><a href="http://www.6453.net/" target="_blank" rel="noopener">龙猫导航</a><p>科研工具</p></div></div>
-<div class="subt">📄 文献下载</div>
-<div class="tgrid"><div class="titem"><a href="https://www.sci-hub.se/" target="_blank" rel="noopener">SCI-HUB</a><p>文献下载</p></div><div class="titem"><a href="https://libgen.is/" target="_blank" rel="noopener">Library Genesis</a><p>图书文献</p></div><div class="titem"><a href="https://annas-archive.org/" target="_blank" rel="noopener">安娜档案</a><p>资源库</p></div><div class="titem"><a href="https://www.pdfdrive.com/" target="_blank" rel="noopener">PDF Drive</a><p>电子书</p></div></div>
-<div class="subt">📚 医学顶刊</div>
-<div class="tgrid"><div class="titem"><a href="https://www.nejm.org/" target="_blank" rel="noopener">NEJM</a><p>新英格兰</p></div><div class="titem"><a href="https://www.thelancet.com/" target="_blank" rel="noopener">Lancet</a><p>柳叶刀</p></div><div class="titem"><a href="https://jamanetwork.com/" target="_blank" rel="noopener">JAMA</a><p>美国医学会</p></div><div class="titem"><a href="https://www.bmj.com/" target="_blank" rel="noopener">BMJ</a><p>英国医学</p></div><div class="titem"><a href="https://www.nature.com/" target="_blank" rel="noopener">Nature</a><p>自然</p></div><div class="titem"><a href="https://www.science.org/" target="_blank" rel="noopener">Science</a><p>科学</p></div><div class="titem"><a href="https://www.cell.com/" target="_blank" rel="noopener">Cell</a><p>细胞</p></div><div class="titem"><a href="https://www.nature.com/nm/" target="_blank" rel="noopener">Nature Med</a><p>自然医学</p></div></div>
-<div class="subt">📊 统计软件</div>
-<div class="tgrid"><div class="titem"><a href="https://www.ibm.com/products/spss-statistics" target="_blank" rel="noopener">SPSS</a><p>统计入门</p></div><div class="titem"><a href="https://www.stata.com/" target="_blank" rel="noopener">Stata</a><p>临床统计</p></div><div class="titem"><a href="https://www.r-project.org/" target="_blank" rel="noopener">R</a><p>开源/生信</p></div><div class="titem"><a href="https://www.python.org/" target="_blank" rel="noopener">Python</a><p>机器学习</p></div><div class="titem"><a href="https://www.sas.com/" target="_blank" rel="noopener">SAS</a><p>医药统计</p></div></div>
-<div class="subt">⚡ 在线统计</div>
-<div class="tgrid"><div class="titem"><a href="https://www.openepi.com/" target="_blank" rel="noopener">OpenEpi</a><p>样本量</p></div><div class="titem"><a href="https://www.graphpad.com/" target="_blank" rel="noopener">GraphPad</a><p>作图/统计</p></div><div class="titem"><a href="https://www.epitools.com/" target="_blank" rel="noopener">Epitools</a><p>流行病</p></div></div>
-<div class="subt">📁 文献管理</div>
-<div class="tgrid"><div class="titem"><a href="https://www.zotero.org/" target="_blank" rel="noopener">Zotero</a><p>开源</p></div><div class="titem"><a href="https://www.mendeley.com/" target="_blank" rel="noopener">Mendeley</a><p>Elsevier</p></div><div class="titem"><a href="https://www.endnote.com/" target="_blank" rel="noopener">EndNote</a><p>期刊格式</p></div><div class="titem"><a href="https://www.notion.so/" target="_blank" rel="noopener">Notion</a><p>笔记</p></div></div>
-<div class="subt">🎨 作图工具</div>
-<div class="tgrid"><div class="titem"><a href="https://originlab.com/" target="_blank" rel="noopener">Origin</a><p>专业绘图</p></div><div class="titem"><a href="https://www.biorender.com/" target="_blank" rel="noopener">BioRender</a><p>医学示意图</p></div><div class="titem"><a href="https://www.chiplot.com/" target="_blank" rel="noopener">ChiPlot</a><p>统计作图</p></div><div class="titem"><a href="https://www.processon.com/" target="_blank" rel="noopener">ProcessOn</a><p>路线图</p></div><div class="titem"><a href="https://www.canva.com/" target="_blank" rel="noopener">Canva</a><p>设计</p></div></div>
-<div class="subt">✉️ 投稿选刊</div>
-<div class="tgrid"><div class="titem"><a href="https://www.letpub.com/" target="_blank" rel="noopener">LetPub</a><p>SCI查询</p></div><div class="titem"><a href="https://journalfinder.elsevier.com/" target="_blank" rel="noopener">JournalFinder</a><p>爱思唯尔</p></div><div class="titem"><a href="https://www.topedit.cn/journal/" target="_blank" rel="noopener">投必得</a><p>期刊匹配</p></div><div class="titem"><a href="https://www.medsci.cn/journal.php" target="_blank" rel="noopener">梅斯</a><p>医学选刊</p></div><div class="titem"><a href="https://www.springer.com/journal-selector" target="_blank" rel="noopener">Springer</a><p>施普林格</p></div></div>
-<div class="subt">🔍 文献检索</div>
-<div class="tgrid"><div class="titem"><a href="https://www.webofscience.com/" target="_blank" rel="noopener">Web of Science</a><p>SCI核心</p></div><div class="titem"><a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">PubMed</a><p>医学索引</p></div><div class="titem"><a href="https://www.cnki.net/" target="_blank" rel="noopener">知网</a><p>中文全文</p></div><div class="titem"><a href="https://www.sciencedirect.com/" target="_blank" rel="noopener">ScienceDirect</a><p>英文全文</p></div><div class="titem"><a href="https://www.scopus.com/" target="_blank" rel="noopener">Scopus</a><p>文献摘要</p></div><div class="titem"><a href="https://www.wanfangdata.com.cn/" target="_blank" rel="noopener">万方</a><p>中文学术</p></div></div>
-</div></div>
+<div class="mh" onclick="togMod(this)"><div class="mt">🔬 科研工具</div><span class="ti">▼</span></div>
+<div class="mc" style="display:none" id="mc-tools"></div>
+</div>
 
 <!-- AI工具 -->
 <div class="sec" id="ai">
-<div class="mhdr" onclick="togMod(this)"><div class="mtitle">🤖 AI科研工具</div><span class="ticon">▼</span></div>
-<div class="mcont">
-<div class="subt">🌐 通用大模型</div>
-<div class="tgrid"><div class="titem"><a href="https://chat.openai.com/" target="_blank" rel="noopener">ChatGPT</a><p>科研问答</p></div><div class="titem"><a href="https://www.anthropic.com/claude" target="_blank" rel="noopener">Claude</a><p>长文献分析</p></div><div class="titem"><a href="https://kimi.moonshot.cn/" target="_blank" rel="noopener">Kimi</a><p>论文精读</p></div><div class="titem"><a href="https://yiyan.baidu.com/" target="_blank" rel="noopener">文心一言</a><p>中文医学</p></div><div class="titem"><a href="https://tongyi.aliyun.com/" target="_blank" rel="noopener">通义千问</a><p>科研辅助</p></div><div class="titem"><a href="https://chat.deepseek.com/" target="_blank" rel="noopener">深度求索</a><p>开源模型</p></div><div class="titem"><a href="https://gemini.google.com/" target="_blank" rel="noopener">Gemini</a><p>谷歌多模态</p></div></div>
-<div class="subt">📄 文献AI</div>
-<div class="tgrid"><div class="titem"><a href="https://elicit.org/" target="_blank" rel="noopener">Elicit</a><p>AI综述</p></div><div class="titem"><a href="https://www.consensus.app/" target="_blank" rel="noopener">Consensus</a><p>科研问答</p></div><div class="titem"><a href="https://www.semanticscholar.org/" target="_blank" rel="noopener">Semantic Scholar</a><p>AI检索</p></div><div class="titem"><a href="https://www.connectedpapers.com/" target="_blank" rel="noopener">Connected Papers</a><p>文献关联</p></div><div class="titem"><a href="https://www.scite.ai/" target="_blank" rel="noopener">Scite.ai</a><p>引用验证</p></div><div class="titem"><a href="https://www.chatpdf.com/" target="_blank" rel="noopener">ChatPDF</a><p>PDF对话</p></div></div>
-<div class="subt">✍️ 写作润色AI</div>
-<div class="tgrid"><div class="titem"><a href="https://quillbot.com/" target="_blank" rel="noopener">QuillBot</a><p>英文改写</p></div><div class="titem"><a href="https://www.grammarly.com/" target="_blank" rel="noopener">Grammarly</a><p>语法校对</p></div><div class="titem"><a href="https://www.wordtune.com/" target="_blank" rel="noopener">Wordtune</a><p>句子改写</p></div><div class="titem"><a href="https://www.writefull.com/" target="_blank" rel="noopener">Writefull</a><p>学术写作</p></div></div>
-<div class="subt">📊 统计AI</div>
-<div class="tgrid"><div class="titem"><a href="https://www.chatstat.app/" target="_blank" rel="noopener">ChatStat</a><p>AI统计</p></div><div class="titem"><a href="https://www.knime.com/" target="_blank" rel="noopener">KNIME</a><p>低代码</p></div><div class="titem"><a href="https://www.datacamp.com/" target="_blank" rel="noopener">DataCamp</a><p>统计教学</p></div></div>
-<div class="subt">🌍 翻译AI</div>
-<div class="tgrid"><div class="titem"><a href="https://www.deepl.com/translator" target="_blank" rel="noopener">DeepL</a><p>科研翻译</p></div><div class="titem"><a href="https://fanyi.baidu.com/" target="_blank" rel="noopener">百度翻译</a><p>文献翻译</p></div><div class="titem"><a href="https://translate.google.cn/" target="_blank" rel="noopener">谷歌翻译</a><p>全文翻译</p></div></div>
-<div class="subt">💻 代码AI</div>
-<div class="tgrid"><div class="titem"><a href="https://github.com/copilot/" target="_blank" rel="noopener">Copilot</a><p>代码生成</p></div><div class="titem"><a href="https://codeium.com/" target="_blank" rel="noopener">Codeium</a><p>免费助手</p></div><div class="titem"><a href="https://www.cursor.com/" target="_blank" rel="noopener">Cursor</a><p>AI编辑器</p></div></div>
-<div class="subt">🏥 医学/生信AI</div>
-<div class="tgrid"><div class="titem"><a href="https://www.ibm.com/products/watson-health" target="_blank" rel="noopener">Watson Health</a><p>IBM医学</p></div><div class="titem"><a href="https://www.biomni.ai/" target="_blank" rel="noopener">Biomni</a><p>斯坦福生物医学</p></div><div class="titem"><a href="https://open.bio.moonshot.cn/" target="_blank" rel="noopener">OpenBioMed</a><p>清华药研AI</p></div><div class="titem"><a href="https://scimaster.deepmodeling.com/" target="_blank" rel="noopener">SciMaster</a><p>科研智能体</p></div></div>
-</div></div>
+<div class="mh" onclick="togMod(this)"><div class="mt">🤖 AI科研工具</div><span class="ti">▼</span></div>
+<div class="mc" style="display:none" id="mc-ai"></div>
+</div>
 
-<!-- 医学量表 -->
+<!-- 量表 -->
 <div class="sec" id="scales">
-<div class="mhdr" onclick="togMod(this)"><div class="mtitle">📋 常用医学量表</div><span class="ticon">▼</span></div>
-<div class="mcont">
-<div class="tlink"><a href="https://www.cosmin.nl/" target="_blank" rel="noopener">📋 COSMIN 量表规范</a></div>
-<p class="desc">量表是临床研究中常用的评估工具，需经过严格的信效度验证。</p>
-<div class="subt">🧠 心理健康</div>
-<div class="tgrid"><div class="titem"><a href="https://phq-9.org/zh/" target="_blank" rel="noopener">PHQ-9</a><p>抑郁筛查 α=0.89</p></div><div class="titem"><a href="https://gad-7.org/zh/" target="_blank" rel="noopener">GAD-7</a><p>焦虑筛查 α=0.92</p></div><div class="titem"><strong style="color:var(--text)">SAS</strong><p>焦虑自评 20条目</p></div><div class="titem"><strong style="color:var(--text)">SDS</strong><p>抑郁自评 20条目</p></div><div class="titem"><strong style="color:var(--text)">SCL-90</strong><p>90项症状清单</p></div><div class="titem"><a href="https://www.mocatest.org/" target="_blank" rel="noopener">MoCA</a><p>认知筛查</p></div></div>
-<div class="subt">❤️ 生活质量</div>
-<div class="tgrid"><div class="titem"><strong style="color:var(--text)">SF-36</strong><p>36条目 8维度</p></div><div class="titem"><a href="https://euroqol.org/" target="_blank" rel="noopener">EQ-5D</a><p>欧洲五维健康</p></div><div class="titem"><a href="https://qol.eortc.be/" target="_blank" rel="noopener">QLQ-C30</a><p>癌症生活质量</p></div></div>
-<div class="subt">🏥 临床功能</div>
-<div class="tgrid"><div class="titem"><strong style="color:var(--text)">Braden</strong><p>压疮风险 α=0.82</p></div><div class="titem"><strong style="color:var(--text)">GCS</strong><p>昏迷评估 ICC=0.89</p></div><div class="titem"><strong style="color:var(--text)">VAS</strong><p>视觉模拟疼痛</p></div><div class="titem"><strong style="color:var(--text)">NRS</strong><p>数字疼痛 0-10</p></div><div class="titem"><strong style="color:var(--text)">Barthel</strong><p>自理能力</p></div><div class="titem"><strong style="color:var(--text)">ADL</strong><p>基础生活</p></div><div class="titem"><a href="https://sleep.pitt.edu/psqi/" target="_blank" rel="noopener">PSQI</a><p>睡眠质量</p></div></div>
-<div class="subt">🤝 社会支持</div>
-<div class="tgrid"><div class="titem"><strong style="color:var(--text)">SSRS</strong><p>社会支持</p></div><div class="titem"><strong style="color:var(--text)">SRRS</strong><p>生活事件</p></div><div class="titem"><strong style="color:var(--text)">CSQ</strong><p>医学应对</p></div><div class="titem"><a href="https://www.who.int/tools/whoqol" target="_blank" rel="noopener">WHOQOL-BREF</a><p>WHO生活质量</p></div></div>
-<div class="subt">📊 量表信效度</div>
-<p class="desc"><strong>信度：</strong>Cronbach's α、重测信度、分半信度<br><strong>效度：</strong>内容效度、结构效度、效标效度<br><strong>结构分析：</strong>EFA、CFA<br><strong>规范：</strong><a href="https://www.cosmin.nl/" target="_blank" rel="noopener">COSMIN</a>
-<button class="mbtn" onclick="togM(this)">查看分析代码</button>
-<div class="mexp">
-<div class="tabs"><button class="tab on" onclick="swTab(this,'sr')">R代码</button><button class="tab" onclick="swTab(this,'sp')">Python代码</button></div>
-<div class="tpane on" id="sr"><div class="cblk"><div class="chdr"><span class="clang">R</span><button class="cpbtn" onclick="cpC(this)">复制</button></div><div class="cbody" data-lang="r">library(psych)
+<div class="mh" onclick="togMod(this)"><div class="mt">📋 常用医学量表</div><span class="ti">▼</span></div>
+<div class="mc" style="display:none">
+<div class="tl"><a href="https://www.cosmin.nl/" target="_blank" rel="noopener">📋 COSMIN 量表规范</a></div>
+<p class="ds" style="margin-bottom:.6rem">量表用于量化患者症状、功能、生活质量，需经严格信效度验证。</p>
+<div id="scales-list"></div>
+<div class="su">📊 量表信效度分析</div>
+<p class="ds"><strong>信度：</strong>Cronbach's α、重测信度、分半信度<br><strong>效度：</strong>内容效度、结构效度、效标效度<br><strong>结构分析：</strong>EFA、CFA<button class="mb" onclick="togM(this)">查看分析代码</button>
+<div class="mx" style="display:none"><div class="tabs"><button class="tab on" onclick="swT(this,'sr')">R代码</button><button class="tab" onclick="swT(this,'sp2')">Python代码</button></div>
+<div class="tp on" id="sr"><div class="cb"><div class="ch"><span class="cl2">R</span><button class="cp" onclick="cpC(this)">复制</button></div><div class="cy" data-lang="r">library(psych)
 alpha(data)
 library(lavaan)
 model &lt;- cfa(model, data=data)
 summary(fit, fit.measures=TRUE)</div></div></div>
-<div class="tpane" id="sp"><div class="cblk"><div class="chdr"><span class="clang">Python</span><button class="cpbtn" onclick="cpC(this)">复制</button></div><div class="cbody" data-lang="python">from pingouin import cronbach_alpha
+<div class="tp" id="sp2"><div class="cb"><div class="ch"><span class="cl2">Python</span><button class="cp" onclick="cpC(this)">复制</button></div><div class="cy" data-lang="python">from pingouin import cronbach_alpha
 from factor_analyzer import FactorAnalyzer
 alpha, ci = cronbach_alpha(data)
 print(f"Cronbach's alpha: {alpha:.3f}")
@@ -558,10 +470,11 @@ fa = FactorAnalyzer(n_factors=3, rotation='varimax')
 fa.fit(data)
 print(fa.loadings_)</div></div></div>
 </div></p>
-</div></div>
+</div>
+</div>
 
 <!-- 博主信息 -->
-<div class="ainfo">
+<div class="ai">
 <h3>👨‍⚕️ 博主信息</h3>
 <p><strong>研究方向：</strong>医学统计学、临床流行病学、生物信息学、真实世界研究、临床预测模型、传染病数学建模</p>
 <p><strong>微信公众号：</strong>Abel统计</p>
@@ -570,54 +483,64 @@ print(fa.loadings_)</div></div></div>
 
 </div>
 
-<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg></button>
+<button class="bt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg></button>
 
 <footer><p>&copy; 2026 Abel统计 | 医学科研一站式学习平台</p></footer>
 
 <script>
-/* ===== 模块折叠 ===== */
-function togMod(el){
-  var c=el.nextElementSibling, i=el.querySelector('.ticon');
-  var open=c.style.display==='block';
-  c.style.display=open?'none':'block';
-  if(i)i.className='ticon'+(open?'':' on');
-}
-/* ===== 教程折叠 ===== */
-function togT(el){
-  var c=el.nextElementSibling;
-  var open=c.style.display==='block';
-  c.style.display=open?'none':'block';
-  el.textContent=open?'📚 点击查看完整建模教程':'📕 收起教程';
-}
-/* ===== 方法折叠 ===== */
-function togM(el){
-  var c=el.nextElementSibling;
-  var open=c.style.display==='block';
-  c.style.display=open?'none':'block';
-  el.textContent=open?'查看详细操作':'收起详细内容';
-}
-/* ===== Tab切换 ===== */
-function swTab(el,id){
-  var box=el.closest('.mexp')||el.closest('.texp');
+/* ========== 核心：折叠/展开（全部用style.display，100%可靠） ========== */
+
+// 方法展开/收起（统计卡片内的"查看详细操作"按钮）
+function togM(btn){
+  var box=btn.nextElementSibling;
   if(!box)return;
-  var ts=box.querySelectorAll('.tab'),ps=box.querySelectorAll('.tpane');
-  for(var i=0;i<ts.length;i++)ts[i].className='tab';
-  for(var i=0;i<ps.length;i++)ps[i].className='tpane';
-  el.className='tab on';
-  var t=document.getElementById(id);
-  if(t)t.className='tpane on';
+  var open=box.style.display==='block';
+  box.style.display=open?'none':'block';
+  btn.textContent=open?'查看详细操作':'收起详细内容';
 }
-/* ===== 复制代码 ===== */
-function cpC(el){
-  var blk=el.closest('.cblk');
+
+// 教程展开/收起（传染病建模的"点击查看完整教程"按钮）
+function togT(btn){
+  var box=btn.nextElementSibling;
+  if(!box)return;
+  var open=box.style.display==='block';
+  box.style.display=open?'none':'block';
+  btn.textContent=open?'📚 点击查看完整建模教程':'📕 收起教程';
+}
+
+// 大模块展开/收起（数据库、科研工具等折叠面板）
+function togMod(hdr){
+  var box=hdr.nextElementSibling;
+  var ico=hdr.querySelector('.ti');
+  if(!box)return;
+  var open=box.style.display==='block';
+  box.style.display=open?'none':'block';
+  if(ico)ico.className='ti'+(open?'':' on');
+}
+
+// Tab切换（用closest精确找容器，不会误操作其他模块）
+function swT(btn,id){
+  var wrap=btn.closest('.mx')||btn.closest('.tx');
+  if(!wrap)return;
+  var tabs=wrap.querySelectorAll('.tab'),panes=wrap.querySelectorAll('.tp');
+  for(var i=0;i<tabs.length;i++)tabs[i].className='tab';
+  for(var i=0;i<panes.length;i++)panes[i].className='tp';
+  btn.className='tab on';
+  var t=document.getElementById(id);
+  if(t)t.className='tp on';
+}
+
+// 复制代码（按钮在.ch内，不在.cy内，取纯文本）
+function cpC(btn){
+  var blk=btn.closest('.cb');
   if(!blk)return;
-  var body=blk.querySelector('.cbody');
+  var body=blk.querySelector('.cy');
   if(!body)return;
   var txt=body.textContent.trim();
   if(navigator.clipboard&&navigator.clipboard.writeText){
     navigator.clipboard.writeText(txt).then(function(){
-      el.textContent='已复制';el.className='cpbtn ok';
-      setTimeout(function(){el.textContent='复制';el.className='cpbtn'},1500);
+      btn.textContent='已复制';btn.className='cp ok';
+      setTimeout(function(){btn.textContent='复制';btn.className='cp'},1500);
     });
   }else{
     var ta=document.createElement('textarea');
@@ -625,12 +548,13 @@ function cpC(el){
     document.body.appendChild(ta);ta.select();
     try{document.execCommand('copy')}catch(e){}
     document.body.removeChild(ta);
-    el.textContent='已复制';el.className='cpbtn ok';
-    setTimeout(function(){el.textContent='复制';el.className='cpbtn'},1500);
+    btn.textContent='已复制';btn.className='cp ok';
+    setTimeout(function(){btn.textContent='复制';btn.className='cp'},1500);
   }
 }
-/* ===== 深色模式 ===== */
-function togTheme(){
+
+/* ========== 深色模式 ========== */
+function togTh(){
   var d=document.documentElement.getAttribute('data-theme')==='dark';
   document.documentElement.setAttribute('data-theme',d?'light':'dark');
   localStorage.setItem('theme',d?'light':'dark');
@@ -638,191 +562,223 @@ function togTheme(){
 }
 function updTI(){
   var d=document.documentElement.getAttribute('data-theme')==='dark';
-  document.getElementById('thIco').innerHTML=d
+  document.getElementById('thI').innerHTML=d
     ?'<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>'
     :'<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
 }
 (function(){var s=localStorage.getItem('theme');if(s==='dark'||(!s&&matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.setAttribute('data-theme','dark')}updTI()})();
-/* ===== 搜索 ===== */
+
+/* ========== 搜索 ========== */
 var SD=[];
-document.querySelectorAll('.titem a').forEach(function(a){var p=a.parentElement.querySelector('p');SD.push({t:a.textContent,d:p?p.textContent.slice(0,60):'',el:a.closest('.titem')})});
-document.querySelectorAll('.card h3').forEach(function(h){SD.push({t:h.textContent,d:(h.nextElementSibling||{}).textContent?h.nextElementSibling.textContent.slice(0,60):'',el:h.closest('.card')})});
-function openS(){document.getElementById('sov').className='sov on';document.getElementById('sinp').value='';document.getElementById('sinp').focus()}
-function closeS(){document.getElementById('sov').className='sov'}
-document.getElementById('sinp').addEventListener('input',function(){
-  var q=this.value.trim().toLowerCase(),box=document.getElementById('sres');
-  if(!q){box.innerHTML='<div class="se">输入关键词开始搜索</div>';return}
+function buildSD(){
+  document.querySelectorAll('.ti2 a').forEach(function(a){
+    var p=a.parentElement.querySelector('p');
+    SD.push({t:a.textContent,d:p?p.textContent.slice(0,50):'',el:a.parentElement});
+  });
+  document.querySelectorAll('.cd h3').forEach(function(h){
+    SD.push({t:h.textContent,d:(h.nextElementSibling||{}).textContent?h.nextElementSibling.textContent.slice(0,50):'',el:h.closest('.cd')});
+  });
+}
+function openS(){document.getElementById('sov').className='ov on';document.getElementById('si').value='';document.getElementById('si').focus()}
+function closeS(){document.getElementById('sov').className='ov'}
+document.getElementById('si').addEventListener('input',function(){
+  var q=this.value.trim().toLowerCase(),box=document.getElementById('sr');
+  if(!q){box.innerHTML='<div class="oe">输入关键词开始搜索</div>';return}
   var hits=SD.filter(function(d){return d.t.toLowerCase().indexOf(q)!==-1||d.d.toLowerCase().indexOf(q)!==-1}).slice(0,8);
-  if(!hits.length){box.innerHTML='<div class="se">未找到匹配结果</div>';return}
+  if(!hits.length){box.innerHTML='<div class="oe">未找到匹配结果</div>';return}
   var h='';
-  for(var i=0;i<hits.length;i++){
-    h+='<div class="si" data-idx="'+i+'"><div class="si-t">'+hits[i].t+'</div><div class="si-d">'+hits[i].d+'</div></div>';
-  }
+  for(var i=0;i<hits.length;i++)h+='<div class="os" data-i="'+i+'"><div class="os-t">'+hits[i].t+'</div><div class="os-d">'+hits[i].d+'</div></div>';
   box.innerHTML=h;
-  box.querySelectorAll('.si').forEach(function(si){
-    si.addEventListener('click',function(){
-      var idx=parseInt(this.getAttribute('data-idx'));
-      closeS();
-      var el=hits[idx].el;
-      if(el){
-        var mc=el.closest('.mcont');
-        if(mc&&mc.style.display!=='block'){
-          var mh=mc.previousElementSibling;
-          if(mh)mh.click();
-        }
-        el.scrollIntoView({behavior:'smooth',block:'center'});
-      }
+  box.querySelectorAll('.os').forEach(function(s){
+    s.addEventListener('click',function(){
+      var idx=parseInt(this.getAttribute('data-i'));closeS();
+      var el=hits[idx].el;if(!el)return;
+      var mc=el.closest('.mc');
+      if(mc&&mc.style.display!=='block'){var mh=mc.previousElementSibling;if(mh)mh.click()}
+      el.scrollIntoView({behavior:'smooth',block:'center'});
     });
   });
 });
 document.addEventListener('keydown',function(e){if((e.ctrlKey||e.metaKey)&&e.key==='k'){e.preventDefault();openS()}if(e.key==='Escape')closeS()});
-/* ===== 回到顶部 ===== */
+
+/* ========== 回到顶部 ========== */
 var btt=document.getElementById('btt');
-window.addEventListener('scroll',function(){btt.className='btt'+(scrollY>500?' vis':'')},{passive:true});
-/* ===== 代码高亮 ===== */
-function hlCode(code,lang){
-  var html=code.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'),tks=[];
-  html=html.replace(/(#"[^"\n]*"|'[^'\n]*')/g,function(m){tks.push(m);return'__TK'+(tks.length-1)+'__'});
+window.addEventListener('scroll',function(){btt.className='bt'+(scrollY>400?' vis':'')},{passive:true});
+
+/* ========== 代码高亮 ========== */
+function hl(code,lang){
+  var h=code.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'),tk=[];
+  h=h.replace(/(#"[^"\n]*"|'[^'\n]*')/g,function(m){tk.push(m);return'__TK'+(tk.length-1)+'__'});
   var kws=lang==='r'?['library','function','if','else','return','TRUE','FALSE','NULL','NA','in','require']:['from','import','as','def','class','return','if','else','for','while','True','False','None','print','with'];
-  for(var i=0;i<kws.length;i++){var k=kws[i];html=html.replace(new RegExp('\\b'+k+'\\b','g'),'<span class="hk">'+k+'</span>')}
-  html=html.replace(/\b(\d+\.?\d*)\b/g,'<span class="hn">$1</span>');
-  html=html.replace(/__TK(\d+)__/g,function(_,i){var t=tks[parseInt(i)];return t.charAt(0)==='#'?'<span class="hc">'+t+'</span>':'<span class="hs">'+t+'</span>'});
-  return html;
+  for(var i=0;i<kws.length;i++){var k=kws[i];h=h.replace(new RegExp('\\b'+k+'\\b','g'),'<span class="hk">'+k+'</span>')}
+  h=h.replace(/\b(\d+\.?\d*)\b/g,'<span class="hn">$1</span>');
+  h=h.replace(/__TK(\d+)__/g,function(_,i){var t=tk[parseInt(i)];return t.charAt(0)==='#'?'<span class="hc">'+t+'</span>':'<span class="hs">'+t+'</span>'});
+  return h;
 }
 function renderCB(){
-  var els=document.querySelectorAll('.cbody[data-lang]');
-  for(var i=0;i<els.length;i++){
-    var el=els[i],lang=el.getAttribute('data-lang'),raw=el.textContent.trim(),hl=hlCode(raw,lang);
-    var lines=hl.split('\n');
-    var html='';
-    for(var j=0;j<lines.length;j++){html+='<span class="cl">'+(lines[j]||' ')+'</span>'}
+  document.querySelectorAll('.cy[data-lang]').forEach(function(el){
+    var lang=el.getAttribute('data-lang'),raw=el.textContent.trim(),hled=hl(raw,lang);
+    var lines=hled.split('\n'),html='';
+    for(var j=0;j<lines.length;j++)html+='<span class="ln">'+(lines[j]||' ')+'</span>';
     el.innerHTML=html;
-  }
-}
-document.addEventListener('DOMContentLoaded',renderCB);
-/* ===== 平滑滚动 ===== */
-document.querySelectorAll('a[href^="#"]').forEach(function(a){
-  a.addEventListener('click',function(e){
-    e.preventDefault();
-    var id=this.getAttribute('href').slice(1);
-    var el=document.getElementById(id);
-    if(!el)return;
-    var mc=el.closest('.mcont');
-    if(mc&&mc.style.display!=='block'){
-      var mh=mc.previousElementSibling;
-      if(mh)mh.click();
-    }
-    el.scrollIntoView({behavior:'smooth',block:'start'});
   });
-});
-/* ===== 决策树 ===== */
+}
+
+/* ========== 数据驱动的网格渲染 ========== */
+function renderGrid(id,sections){
+  var el=document.getElementById(id);if(!el)return;
+  var h='';
+  for(var i=0;i<sections.length;i++){
+    var s=sections[i];
+    h+='<div class="su">'+s[0]+'</div><div class="tg">';
+    for(var j=1;j<s.length;j++){
+      var it=s[j];
+      h+='<div class="ti2"><a href="'+it[1]+'" target="_blank" rel="noopener">'+it[0]+'</a><p>'+it[2]+'</p></div>';
+    }
+    h+='</div>';
+  }
+  el.innerHTML=h;
+}
+
+var DBS=[
+  ['🌍 全球公共卫生',['WHO','https://www.who.int/','世界卫生组织'],['US CDC','https://www.cdc.gov/','美国疾控中心'],['GBD','https://ghdx.healthdata.org/','全球疾病负担'],['World Bank','https://www.worldbank.org/','世界银行'],['WHO GHO','https://apps.who.int/gho/','健康观测库'],['ECDC','https://www.ecdc.europa.eu/','欧洲疾控']],
+  ['🏥 临床重症',['MIMIC-IV','https://mimic.mit.edu/','重症数据库'],['eICU','https://eicu-crd.mit.edu/','多中心重症'],['PhysioNet','https://www.physionet.org/','生理信号']],
+  ['👥 人群队列',['UK Biobank','https://www.ukbiobank.ac.uk/','英国50万队列'],['NHANES','https://wwwn.cdc.gov/nchs/nhanes/','美国健康营养'],['CHARLS','https://charls.pku.edu.cn/','中国健康养老'],['TCGA','https://www.cancer.gov/about-nci/organization/ccg/research/structural-genomics/tcga','肿瘤基因组'],['China Kadoorie','https://www.cdcgs.org.cn/','中国50万队列']],
+  ['🎗 肿瘤精准医学',['GDC','https://portal.gdc.cancer.gov/','癌症基因组'],['SEER','https://seer.cancer.gov/','肿瘤登记'],['cBioPortal','https://www.cbioportal.org/','肿瘤多组学'],['STRING','https://string-db.org/','蛋白互作']],
+  ['🦠 微生物',['NCBI Genome','https://www.ncbi.nlm.nih.gov/genome/','微生物基因组'],['GTDB','https://gtdb.ecogenomic.org/','基因组分类'],['ENA','https://www.ebi.ac.uk/ena/','核酸序列'],['PATRIC','https://www.patricbrc.org/','病原微生物']],
+  ['💊 药学',['DrugBank','https://www.drugbank.com/','药物综合库'],['PharmGKB','https://www.pharmgkb.org/','药物基因组'],['PubChem','https://pubchem.ncbi.nlm.nih.gov/','化合物结构'],['DGIdb','https://www.dgidb.org/','药物基因互作']],
+  ['🧬 罕见病/遗传病',['Orphanet','https://www.orpha.net/','罕见病'],['OMIM','https://omim.org/','孟德尔遗传'],['HGNC','https://www.genenames.org/','基因命名'],['ClinVar','https://www.ncbi.nlm.nih.gov/clinvar/','临床变异']],
+  ['📜 循证医学',['Cochrane','https://www.cochranelibrary.com/','循证医学'],['UpToDate','https://www.uptodate.com/','临床决策']],
+  ['🇨🇳 中国本土',['NMDC','https://nmdc.cn/','国家微生物'],['中国CDC','https://www.chinacdc.cn/','国家疾控'],['CNCB','https://www.cncb.ac.cn/','国家基因组'],['CNGB','https://db.cngb.org/','国家生物信息'],['PubScholar','https://pubscholar.cn/','科技文献'],['国自然','https://www.nsfc.gov.cn/','自然科学基金']],
+  ['🧪 生信/组学',['NCBI','https://www.ncbi.nlm.nih.gov/','生物技术中心'],['EBI','https://www.ebi.ac.uk/','欧洲生信所'],['OpenGWAS','https://opengwas.io/','全基因组关联'],['GTEx','https://gtexportal.org/','组织表达'],['GEO','https://www.ncbi.nlm.nih.gov/geo/','基因表达'],['PMC','https://www.ncbi.nlm.nih.gov/pmc/','免费全文'],['ClinicalTrials','https://clinicaltrials.gov/','临床试验注册']]
+];
+
+var TOOLS=[
+  ['📌 学术导航',['大木虫','http://www.4243.net/','学术入口'],['科研通','https://www.ablesci.com/','科研平台'],['文献小镇','http://www.sci-hub.ac.cn/','文献获取'],['龙猫导航','http://www.6453.net/','科研工具']],
+  ['📄 文献下载',['SCI-HUB','https://www.sci-hub.se/','文献下载'],['Library Genesis','https://libgen.is/','图书文献'],['安娜档案','https://annas-archive.org/','资源库'],['PDF Drive','https://www.pdfdrive.com/','电子书']],
+  ['📚 医学顶刊',['NEJM','https://www.nejm.org/','新英格兰'],['Lancet','https://www.thelancet.com/','柳叶刀'],['JAMA','https://jamanetwork.com/','美国医学会'],['BMJ','https://www.bmj.com/','英国医学'],['Nature','https://www.nature.com/','自然'],['Science','https://www.science.org/','科学'],['Cell','https://www.cell.com/','细胞'],['Nature Med','https://www.nature.com/nm/','自然医学']],
+  ['📊 统计软件',['SPSS','https://www.ibm.com/products/spss-statistics','统计入门'],['Stata','https://www.stata.com/','临床统计'],['R','https://www.r-project.org/','开源/生信'],['Python','https://www.python.org/','机器学习'],['SAS','https://www.sas.com/','医药统计']],
+  ['⚡ 在线统计',['OpenEpi','https://www.openepi.com/','样本量'],['GraphPad','https://www.graphpad.com/','作图/统计'],['Epitools','https://www.epitools.com/','流行病']],
+  ['📁 文献管理',['Zotero','https://www.zotero.org/','开源'],['Mendeley','https://www.mendeley.com/','Elsevier'],['EndNote','https://www.endnote.com/','期刊格式'],['Notion','https://www.notion.so/','笔记']],
+  ['🎨 作图工具',['Origin','https://originlab.com/','专业绘图'],['BioRender','https://www.biorender.com/','医学示意图'],['ChiPlot','https://www.chiplot.com/','统计作图'],['ProcessOn','https://www.processon.com/','路线图'],['Canva','https://www.canva.com/','设计']],
+  ['✉️ 投稿选刊',['LetPub','https://www.letpub.com/','SCI查询'],['JournalFinder','https://journalfinder.elsevier.com/','爱思唯尔'],['投必得','https://www.topedit.cn/journal/','期刊匹配'],['梅斯','https://www.medsci.cn/journal.php','医学选刊'],['Springer','https://www.springer.com/journal-selector','施普林格']],
+  ['🔍 文献检索',['Web of Science','https://www.webofscience.com/','SCI核心'],['PubMed','https://pubmed.ncbi.nlm.nih.gov/','医学索引'],['知网','https://www.cnki.net/','中文全文'],['ScienceDirect','https://www.sciencedirect.com/','英文全文'],['Scopus','https://www.scopus.com/','文献摘要'],['万方','https://www.wanfangdata.com.cn/','中文学术']]
+];
+
+var AIS=[
+  ['🌐 通用大模型',['ChatGPT','https://chat.openai.com/','科研问答'],['Claude','https://www.anthropic.com/claude','长文献分析'],['Kimi','https://kimi.moonshot.cn/','论文精读'],['文心一言','https://yiyan.baidu.com/','中文医学'],['通义千问','https://tongyi.aliyun.com/','科研辅助'],['深度求索','https://chat.deepseek.com/','开源模型'],['Gemini','https://gemini.google.com/','谷歌多模态']],
+  ['📄 文献AI',['Elicit','https://elicit.org/','AI综述'],['Consensus','https://www.consensus.app/','科研问答'],['Semantic Scholar','https://www.semanticscholar.org/','AI检索'],['Connected Papers','https://www.connectedpapers.com/','文献关联'],['Scite.ai','https://www.scite.ai/','引用验证'],['ChatPDF','https://www.chatpdf.com/','PDF对话']],
+  ['✍️ 写作润色',['QuillBot','https://quillbot.com/','英文改写'],['Grammarly','https://www.grammarly.com/','语法校对'],['Wordtune','https://www.wordtune.com/','句子改写'],['Writefull','https://www.writefull.com/','学术写作']],
+  ['📊 统计AI',['ChatStat','https://www.chatstat.app/','AI统计'],['KNIME','https://www.knime.com/','低代码'],['DataCamp','https://www.datacamp.com/','统计教学']],
+  ['🌍 翻译AI',['DeepL','https://www.deepl.com/translator','科研翻译'],['百度翻译','https://fanyi.baidu.com/','文献翻译'],['谷歌翻译','https://translate.google.cn/','全文翻译']],
+  ['💻 代码AI',['Copilot','https://github.com/copilot/','代码生成'],['Codeium','https://codeium.com/','免费助手'],['Cursor','https://www.cursor.com/','AI编辑器']],
+  ['🏥 医学/生信AI',['Watson Health','https://www.ibm.com/products/watson-health','IBM医学'],['Biomni','https://www.biomni.ai/','斯坦福生物医学'],['OpenBioMed','https://open.bio.moonshot.cn/','清华药研AI'],['SciMaster','https://scimaster.deepmodeling.com/','科研智能体']]
+];
+
+var SCALES=[
+  ['🧠 心理健康',[['PHQ-9','https://phq-9.org/zh/','抑郁筛查 α=0.89'],['GAD-7','https://gad-7.org/zh/','焦虑筛查 α=0.92'],['SAS','','焦虑自评 20条目'],['SDS','','抑郁自评 20条目'],['SCL-90','','90项症状清单'],['MoCA','https://www.mocatest.org/','认知筛查']]],
+  ['❤️ 生活质量',[['SF-36','','36条目 8维度'],['EQ-5D','https://euroqol.org/','欧洲五维健康'],['QLQ-C30','https://qol.eortc.be/','癌症生活质量']]],
+  ['🏥 临床功能',[['Braden','','压疮风险 α=0.82'],['GCS','','昏迷评估 ICC=0.89'],['VAS','','视觉模拟疼痛'],['NRS','','数字疼痛 0-10'],['Barthel','','自理能力'],['ADL','','基础生活'],['PSQI','https://sleep.pitt.edu/psqi/','睡眠质量']]],
+  ['🤝 社会支持',[['SSRS','','社会支持'],['SRRS','','生活事件'],['CSQ','','医学应对'],['WHOQOL-BREF','https://www.who.int/tools/whoqol','WHO生活质量']]]
+];
+
+function renderScales(){
+  var el=document.getElementById('scales-list');if(!el)return;
+  var h='';
+  for(var i=0;i<SCALES.length;i++){
+    var s=SCALES[i];
+    h+='<div class="su">'+s[0]+'</div><div class="tg">';
+    for(var j=0;j<s[1].length;j++){
+      var it=s[1][j];
+      if(it[1]){
+        h+='<div class="ti2"><a href="'+it[1]+'" target="_blank" rel="noopener">'+it[0]+'</a><p>'+it[2]+'</p></div>';
+      }else{
+        h+='<div class="ti2"><strong style="font-size:.85rem;color:var(--tx)">'+it[0]+'</strong><p>'+it[2]+'</p></div>';
+      }
+    }
+    h+='</div>';
+  }
+  el.innerHTML=h;
+}
+
+/* ========== 决策树 ========== */
 var DTC=document.getElementById('dtC');
 var DT=[
   {q:'你的因变量是什么类型？',opts:[
-    {t:'连续变量（如血压、血糖）',n:1},
-    {t:'二分类变量（如死亡/存活）',n:2},
-    {t:'生存数据（含时间+事件）',n:3},
-    {t:'有序多分类（如轻度/中度/重度）',n:4},
-    {t:'无序多分类（如血型A/B/O/AB）',n:5}
+    {t:'连续变量（血压、血糖等）',n:1},{t:'二分类变量（死亡/存活）',n:2},
+    {t:'生存数据（含时间+事件）',n:3},{t:'有序多分类（轻/中/重）',n:4},{t:'无序多分类（血型）',n:5}
   ]},
-  {q:'有几个组进行比较？',opts:[
-    {t:'2组',n:6,act:function(){goCard('ttest-card')}},
-    {t:'3组及以上',n:7,act:function(){goCard('ttest-card')}}
+  {q:'比较几组？',opts:[
+    {t:'2组 → 独立样本t检验',n:-1,go:'cd-ttest'},{t:'3组及以上 → 单因素ANOVA',n:-1,go:'cd-ttest'}
   ]},
   {q:'自变量有几个？',opts:[
-    {t:'1个自变量',n:8,act:function(){goCard('chi-card')}},
-    {t:'多个自变量',n:9,act:function(){goCard('reg-card')}}
+    {t:'1个 → 卡方检验',n:-1,go:'cd-chi'},{t:'多个 → Logistic回归',n:-1,go:'cd-reg'}
   ]},
-  {q:'分析目的是什么？',opts:[
-    {t:'单因素比较（组间差异）',n:10,act:function(){goCard('ttest-card')}},
-    {t:'多因素风险分析',n:11,act:function(){goCard('reg-card')}}
+  {q:'分析目的？',opts:[
+    {t:'组间差异 → Log-rank检验',n:-1,go:'cd-ttest'},{t:'多因素风险 → Cox回归',n:-1,go:'cd-reg'}
   ]},
-  {q:'有几个组？',opts:[
-    {t:'2组',n:12,act:function(){goCard('ttest-card')}},
-    {t:'3组及以上',n:13,act:function(){goCard('ttest-card')}}
+  {q:'比较几组？',opts:[
+    {t:'2组 → Wilcoxon秩和检验',n:-1,go:'cd-ttest'},{t:'3组及以上 → Kruskal-Wallis',n:-1,go:'cd-ttest'}
   ]},
-  {q:'几个组？',opts:[
-    {t:'2组',n:14,act:function(){goCard('chi-card')}},
-    {t:'3组及以上',n:15,act:function(){goCard('chi-card')}}
-  ]},
-  {q:'数据是否满足正态分布？',opts:[
-    {t:'满足正态 → 独立样本t检验',n:-1,act:function(){goCard('ttest-card')}},
-    {t:'不满足正态 → Wilcoxon秩和检验',n:-1,act:function(){goCard('ttest-card')}}
-  ]},
-  {q:'数据是否满足正态分布？',opts:[
-    {t:'满足正态 → 单因素ANOVA',n:-1,act:function(){goCard('ttest-card')}},
-    {t:'不满足正态 → Kruskal-Wallis检验',n:-1,act:function(){goCard('ttest-card')}}
-  ]},
-  {q:'设计类型？',opts:[
-    {t:'横断面研究 → 二元Logistic回归',n:-1,act:function(){goCard('reg-card')}},
-    {t:'队列/病例对照 → 条件Logistic回归',n:-1,act:function(){goCard('reg-card')}}
-  ]},
-  {q:'因变量类型？',opts:[
-    {t:'连续 → 多元线性回归',n:-1,act:function(){goCard('reg-card')}},
-    {t:'二分类 → Logistic回归',n:-1,act:function(){goCard('reg-card')}},
-    {t:'生存 → Cox回归',n:-1,act:function(){goCard('reg-card')}}
-  ]},
-  {q:'分析方法？',opts:[
-    {t:'Kaplan-Meier + Log-rank检验',n:-1,act:function(){goCard('ttest-card')}},
-    {t:'Cox比例风险回归',n:-1,act:function(){goCard('reg-card')}}
-  ]},
-  {q:'数据是否满足正态分布？',opts:[
-    {t:'满足 → t检验或ANOVA',n:-1,act:function(){goCard('ttest-card')}},
-    {t:'不满足 → 非参数检验',n:-1,act:function(){goCard('ttest-card')}}
-  ]},
-  {q:'数据是否满足正态分布？',opts:[
-    {t:'满足 → ANOVA',n:-1,act:function(){goCard('ttest-card')}},
-    {t:'不满足 → Kruskal-Wallis',n:-1,act:function(){goCard('ttest-card')}}
-  ]},
-  {q:'期望频数是否都≥5？',opts:[
-    {t:'是 → Pearson卡方检验',n:-1,act:function(){goCard('chi-card')}},
-    {t:'否 → Fisher确切概率法',n:-1,act:function(){goCard('chi-card')}}
-  ]},
-  {q:'期望频数是否都≥5？',opts:[
-    {t:'是 → Pearson卡方检验',n:-1,act:function(){goCard('chi-card')}},
-    {t:'否 → Fisher确切概率法或Monte Carlo',n:-1,act:function(){goCard('chi-card')}}
+  {q:'比较几组？',opts:[
+    {t:'2组 → Pearson卡方',n:-1,go:'cd-chi'},{t:'3组及以上 → 卡方+事后比较',n:-1,go:'cd-chi'}
   ]}
 ];
-var dtHist=[];
-function goCard(id){
-  var el=document.getElementById(id);
-  if(el){
-    el.scrollIntoView({behavior:'smooth',block:'center'});
-    el.style.boxShadow='0 0 0 3px var(--acc),0 4px 20px rgba(6,182,212,.15)';
-    setTimeout(function(){el.style.boxShadow=''},2000);
-  }
+var dtH=[];
+function goCd(id){
+  var el=document.getElementById(id);if(!el)return;
+  el.scrollIntoView({behavior:'smooth',block:'center'});
+  el.style.boxShadow='0 0 0 3px var(--acc),0 4px 16px rgba(6,182,212,.15)';
+  setTimeout(function(){el.style.boxShadow=''},2000);
 }
-function renderDT(idx){
-  var node=DT[idx];
-  var h='<div class="dtq">'+node.q+'</div><div class="dtOpts">';
-  for(var i=0;i<node.opts.length;i++){
-    var o=node.opts[i];
-    h+='<button class="dtOpt" data-n="'+o.n+'">'+o.t+'</button>';
+function rdt(idx){
+  var nd=DT[idx],h='<div class="dtq">'+nd.q+'</div><div class="dtO">';
+  for(var i=0;i<nd.opts.length;i++){
+    var o=nd.opts[i];
+    h+='<button class="dtB" data-n="'+o.n+'">'+o.t+'</button>';
   }
   h+='</div>';
-  if(dtHist.length>0){
-    h='<button class="dtBack" onclick="dtBack()">← 返回上一步</button>'+h;
-  }
+  if(dtH.length>0)h='<button class="dtBk" onclick="dtBk()">← 返回</button>'+h;
   DTC.innerHTML=h;
-  DTC.querySelectorAll('.dtOpt').forEach(function(btn){
-    btn.addEventListener('click',function(){
+  DTC.querySelectorAll('.dtB').forEach(function(b){
+    b.addEventListener('click',function(){
       var n=parseInt(this.getAttribute('data-n'));
-      var opt=null;
-      for(var j=0;j<node.opts.length;j++){if(node.opts[j].n===n){opt=node.opts[j];break}}
-      if(n===-1&&opt&&opt.act){
-        var res='<div class="dtRes on"><strong>推荐方法：'+this.textContent+'</strong><p>点击下方按钮跳转到对应教程模块</p><button class="dtGo" onclick="this.act&&this.act()">查看教程 →</button></div>';
-        DTC.innerHTML=(dtHist.length>0?'<button class="dtBack" onclick="dtBack()">← 返回上一步</button>':'')+res;
-        var goBtn=DTC.querySelector('.dtGo');
-        if(goBtn){goBtn.act=opt.act}
+      var opt=null;for(var j=0;j<nd.opts.length;j++){if(nd.opts[j].n===n){opt=nd.opts[j];break}}
+      if(n===-1&&opt&&opt.go){
+        DTC.innerHTML=(dtH.length>0?'<button class="dtBk" onclick="dtBk()">← 返回</button>':'')
+          +'<div class="dtR"><strong>推荐方法：'+this.textContent+'</strong>'
+          +'<p>点击下方跳转到对应教程</p>'
+          +'<button class="dtG" onclick="goCd(\''+opt.go+'\')">查看教程 →</button></div>';
         return;
       }
-      dtHist.push(idx);
-      renderDT(n);
+      dtH.push(idx);rdt(n);
     });
   });
 }
-function dtBack(){if(dtHist.length>0){dtHist.pop();renderDT(dtHist[dtHist.length-1]||0)}}
-renderDT(0);
+function dtBk(){if(dtH.length>0){dtH.pop();rdt(dtH.length?dtH[dtH.length-1]:0)}}
+
+/* ========== 平滑滚动（含折叠面板自动展开） ========== */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    var id=this.getAttribute('href').slice(1),el=document.getElementById(id);
+    if(!el)return;
+    var mc=el.closest('.mc');
+    if(mc&&mc.style.display!=='block'){var mh=mc.previousElementSibling;if(mh)mh.click()}
+    el.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+
+/* ========== 初始化 ========== */
+document.addEventListener('DOMContentLoaded',function(){
+  renderGrid('mc-db',DBS);
+  renderGrid('mc-tools',TOOLS);
+  renderGrid('mc-ai',AIS);
+  renderScales();
+  buildSD();
+  renderCB();
+  rdt(0);
+});
 </script>
 </body>
 </html>
